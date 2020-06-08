@@ -25,7 +25,7 @@ function App() {
     <div className="App">
       <Layout>
         {content}
-        <Footer style={{textAlign: 'center'}}>Ant Design ©2018 Created by Ant UED</Footer>
+        <Footer style={{textAlign: 'center'}}>Copywrite 2020 PwC</Footer>
       </Layout>
     </div>
   );

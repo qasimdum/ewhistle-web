@@ -13,26 +13,47 @@
 }
 .quotes {
     margin-top: 20px;
+
+}
+.blockquote {
+    position: relative;
+    display: flex;
+    align-items: center;
     background: #f7f7f7;
     border:1px solid #cccccc;
     border-radius: 10px;
-}
-.blockquote {
-    font-size: 25px;
-    position: relative;
+    background: url("../../../assets/quote.png");
+    background-position: 10px 20px;
+    background-size: 30px auto;
+    background-repeat: no-repeat;
+    padding: 22px 24px 22px 52px;
+    font-size: 15px;
+    line-height: 26px;
+    font-family: Droid Serif, Georgia, serif;
     font-style: italic;
+    text-align: justify;
+    color: #777;
+}
+.quotes-footer-wrapper {
     display: flex;
-    justify-content: center;
+    justify-content: space-between;
     align-items: center;
-    height: 140px;
-    padding: 0 10px;
 }
-.blockquote:before {
-    content: url("../../../assets/quote.png");
-    margin-top: 15px;
-    position: absolute;
-    top: 10px; left: 50px;
+.quotes-footer {
+    display: flex;
+    justify-content: flex-start;
+    text-align: justify;
+    align-items: center;
 }
+.quotes-footer-info {
+    margin-left: 20px;
+}
+.quotes-footer img {
+    border-radius: 50%;
+    width: 64px; height: 64px;
+    object-fit: cover;
+}
+
 @media only screen and (max-width: 576px) {
     .blockquote {
         font-size: 16px;
@@ -53,7 +74,25 @@
 
 .tab-content p {
     margin-top: 20px;
+    text-align: justify;
 }
 .tab-content img {
     width: 100%;
+}
+.tabs-title {
+    font-size: 30px;
+    font-weight: bold;
+    text-align: center;
+}
+.quotes-footer-info .title {
+    font-weight: bold;
+}
+.quotes-footer-info .position {
+    display: none;
+    color: #aaa;
+    font-size: 12px;
+    font-style: italic;
+    text-transform: none;
+    margin-top: 2px;
+    margin-bottom: 2px;
 }

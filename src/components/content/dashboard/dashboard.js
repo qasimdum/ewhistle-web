@@ -12,8 +12,7 @@ import {
 import allegationNatures, {getSingleAllegationNature} from "../../../enums/AllegationNature";
 import severities, {getSingleSeverity} from "../../../enums/Severity";
 import allegationStatuses, {getSingleAllegationStatus} from "../../../enums/AllegationStatus";
-import {getAllegations, getDepartments} from "../../../axios/allegations";
-import tableConfig from "../../../config/table";
+import {getDepartments} from "../../../axios/allegations";
 import entities from "../../../enums/Entities";
 import countries from "../../../enums/Country";
 import {getSingleUser} from "../../../axios/users";
@@ -119,7 +118,7 @@ function Dashboard() {
 			.then(response => {
 				if (response.status) {
 					setUsers(response.data);
-					searchF.setFieldsValue({assignee: ''})
+					searchF.setFieldsValue({assignee: undefined})
 				}
 			})
 	}, [searchF]);

@@ -1,9 +1,17 @@
 .policy {
     text-align: justify;
-    margin-top: 70px;
+    margin-top: 10px;
 }
 @media only screen and (max-width: 576px) {
     .policy {
-        margin-top: 130px;
+        margin-top: 40px;
     }
+    .policy > img {
+        width: 100%;
+    }
+
+}
+.policy > img {
+    float: left;
+    width: 500px;
 }

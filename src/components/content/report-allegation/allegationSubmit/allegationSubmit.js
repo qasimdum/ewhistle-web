@@ -12,7 +12,7 @@ function AllegationSubmit() {
       history.push('/');
     }
     localStorage.removeItem('trackingId')
-  }, []);
+  }, [history]);
   return (
     <div className={'allegation_submit'}>
       <h2>Your allegation was submitted</h2>

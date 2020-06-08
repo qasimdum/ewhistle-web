@@ -25,17 +25,12 @@ function SignIn() {
       })
   };
 
-  const onFinishFailed = errorInfo => {
-    //console.log('Failed:', errorInfo);
-  };
-
   return (
     <div className={'signin'}>
       <Form
         {...layout}
         name="basic"
         onFinish={onFinish}
-        onFinishFailed={onFinishFailed}
       >
         <Form.Item
           label="Username"

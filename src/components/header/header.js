@@ -1,7 +1,9 @@
-import {Layout, Menu, Row, Col, Button, Tag} from 'antd';
+import {Layout, Menu, Row, Col} from 'antd';
 import React from 'react';
 import './header.css';
-import BackgroundImage from '../../assets/bg.jpg';
+import BackgroundImage1 from '../../assets/header_1.jpg';
+import BackgroundImage2 from '../../assets/header_2.png';
+import LogoImage from '../../assets/logo.png';
 import {useHistory} from 'react-router-dom';
 
 const {Header} = Layout;
@@ -21,7 +23,7 @@ function HeaderPage() {
         <Row>
           <Col sm={8} xs={24}>
             <div className="logo">
-              e-Whistle
+              <img src={LogoImage} alt={'logo'} />
             </div>
           </Col>
           <Col sm={16} xs={24}>
@@ -35,14 +37,28 @@ function HeaderPage() {
           </Col>
         </Row>
       </Header>
-      {history.location.pathname === '/' ? <div className={'landing-img'}>
-        <img src={BackgroundImage} alt={'background'} />
-        <div className={'text'}>
-          <h1>E-Whistle</h1>
-          <p>“Your electronic Whistleblowing platform”</p>
-          <Tag color={"blue"} onClick={() => history.push('/report_allegation')}>Report Allegation</Tag>
+      {history.location.pathname === '/' ? (
+        <div className={'landing-img'}>
+          <img src={BackgroundImage1} alt={'background'} />
+          <div className={'text'}>
+            <h1>E-Whistle</h1>
+          </div>
+          <div className={'bottom-text'}>
+            <div><button onClick={() => history.push('/report_allegation')}>Report Allegation</button></div>
+            <span>Your electronic Whistleblowing platform</span>
+          </div>
         </div>
-      </div> : null}
+      ) : null}
+      {history.location.pathname === '/policy' ? (
+        <div className={'landing-img-policy'}>
+          <img src={BackgroundImage2} alt={'background'} />
+          <div className={'text'}>
+
+            {/*<Tag color={"blue"} onClick={() => history.push('/report_allegation')}>Report Allegation</Tag>*/}
+            <button onClick={() => history.push('/report_allegation')}>Report Allegation</button>
+          </div>
+        </div>
+      ) : null}
     </>
   )
 }

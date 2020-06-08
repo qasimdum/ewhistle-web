@@ -1,9 +1,11 @@
 import React from 'react';
 import './policy.css'
+import PolicyImage from '../../../assets/policy.png';
 
 function Policy() {
   return (
     <div className={'policy'}>
+      <img src={PolicyImage} alt={'Policy'} />
       <p>A whistleblower as defined by this policy is an employee of (Name of Company/Organization) who reports an
         activity that he/she considers to be illegal or dishonest to one or more of the parties specified in this
         Policy. The whistleblower is not responsible for investigating the activity or for determining fault or
@@ -48,6 +50,7 @@ function Policy() {
         Resources who is responsible for investigating and coordinating corrective action.
       </p>
       <p>Employees with any questions regarding this policy should contact the Director of Human Resources.</p>
+      {/*<Quotes/>*/}
     </div>
   )
 }

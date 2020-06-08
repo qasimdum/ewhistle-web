@@ -1,5 +1,5 @@
 import React, {useEffect} from 'react';
-import {Form, Input, Popover, Select, Spin, Tooltip} from "antd";
+import {Form, Input, Popover, Select, Tooltip} from "antd";
 import {QuestionCircleOutlined} from '@ant-design/icons';
 import fraudulentAllegations, {enums as fraudulentAllegationsEnum} from '../../../../../enums/FraudulentAllegation';
 import misconductAllegations from '../../../../../enums/MisconductAllegation';

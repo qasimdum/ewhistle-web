@@ -7,11 +7,9 @@ import allegationNatures, {enums as allegationNatureEnums} from '../../../../enu
 import allegationOccurrences from '../../../../enums/AllegationOccurrence';
 import countries from '../../../../enums/Country';
 import jobPositions from '../../../../enums/JobPosition';
-import moment from 'moment';
 import AllegationNature from "./allegation-nature/allegation-nature";
 import {getSingleAllegation} from "../../../../axios/allegations";
 import Actions from "./actions";
-import {getSingleAllegationStatus} from "../../../../enums/AllegationStatus";
 
 function ReportAllegation(props) {
 
@@ -44,11 +42,10 @@ function ReportAllegation(props) {
       setIsLoading(false);
       form.setFieldsValue(generateFormValues(props.allegationData))
     }
-  }, [props.allegationId, setFormData]);
+  }, [props.allegationId]);
 
   function generateFormValues(data) {
     if (data.allegationDate) {
-      console.log(data.allegationDate, moment(data.allegationDate).format("YYYY-MM-DD"))
       data.allegationDate = "";
     }
     for (let key in data) {
@@ -200,7 +197,7 @@ function ReportAllegation(props) {
               },
             ]}
           >
-            <Radio.Group disabled onChange={(e) => console.log(e)}>
+            <Radio.Group disabled>
               {allegationOccurrences.map(item => <Radio key={item.key} value={item.key}>{item.value}</Radio>)}
             </Radio.Group>
           </Form.Item>

@@ -197,7 +197,7 @@ function ReportAllegation() {
             },
           ]}
         >
-          <Radio.Group onChange={(e) => console.log(e)}>
+          <Radio.Group>
             {allegationOccurrences.map(item => <Radio key={item.key} value={item.key}>{item.value}</Radio>)}
           </Radio.Group>
         </Form.Item>

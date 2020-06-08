@@ -11,6 +11,7 @@ import {useHistory} from "react-router-dom";
 import './content.css';
 import {getMyAccount} from "../../axios/users";
 import {enums as rolesEnum} from '../../enums/Roles';
+import LogoImage from '../../assets/logo.png';
 
 const { Header, Sider, Content } = Layout;
 
@@ -26,12 +27,21 @@ function BackendContent() {
       })
   }, []);
 
+  function onMenuSelect(e) {
+    if(e.key === '/logout') {
+      localStorage.removeItem('idToken');
+      history.push('/');
+    }else{
+      history.push(e.key)
+    }
+  }
+
   return (
     <Layout>
       <Sider trigger={null} collapsible collapsed={collapsed} breakpoint="lg"
              collapsedWidth="0">
-        <div className="backend-logo">e-Whistle</div>
-        <Menu mode="inline" defaultSelectedKeys={[history.location.pathname]} onSelect={e => history.push(e.key)}>
+        <div className="backend-logo"><img src={LogoImage} alt={'Logo'} /></div>
+        <Menu mode="inline" defaultSelectedKeys={[history.location.pathname]} onSelect={e => onMenuSelect(e)}>
           <Menu.Item key="/allegations" icon={<UserOutlined />}>
             Allegation
           </Menu.Item>
@@ -41,6 +51,9 @@ function BackendContent() {
           {myUser && myUser.role === rolesEnum.ADMINISTRATOR ? <Menu.Item key="/dashboard" icon={<VideoCameraOutlined />}>
             Dashboard
           </Menu.Item> : null}
+          <Menu.Item key="/logout" icon={<VideoCameraOutlined />}>
+            Logout
+          </Menu.Item>
         </Menu>
       </Sider>
       <Layout className="site-layout-back">
