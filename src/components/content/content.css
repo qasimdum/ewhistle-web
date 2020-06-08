@@ -1,0 +1,30 @@
+.site-layout-back {
+    background: #f0f2f5;
+}
+.site-layout {
+    background: #FFFFFF;
+}
+.trigger {
+    font-size: 18px;
+    line-height: 64px;
+    padding: 0 24px;
+    cursor: pointer;
+    transition: color 0.3s;
+}
+.trigger:hover {
+    color: #1890ff;
+}
+.backend-logo {
+    height: 32px;
+    background: rgb(78, 204, 33);
+    margin: 16px;
+    font-weight: bold;
+    font-size: 20px;
+    text-align: center;
+}
+.site-layout-back .site-layout-background {
+    background: #fff;
+}
+.ant-layout-sider {
+    background: white;
+}
