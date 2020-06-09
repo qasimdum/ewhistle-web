@@ -1,0 +1,15 @@
+.chat-actions {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+}
+.chat-content {
+    border:1px solid #cccccc;
+    padding:20px;
+    margin: 10px 0;
+}
+.chat-item {
+    border:1px solid #e5e5e5;
+    padding:10px;
+    margin: 10px 0;
+}
