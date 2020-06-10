@@ -30,7 +30,8 @@ function BackendContent() {
   function onMenuSelect(e) {
     if(e.key === '/logout') {
       localStorage.removeItem('idToken');
-      history.push('/');
+      //history.push('/');
+      window.location.href = '/';
     }else{
       history.push(e.key)
     }

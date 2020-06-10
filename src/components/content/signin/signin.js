@@ -20,7 +20,8 @@ function SignIn() {
       .then(response => {
         if(response.token) {
           localStorage.setItem('idToken', response.token);
-          history.push('/allegations');
+          //history.push('/allegations');
+          window.location.href = '/allegations';
         }
       })
   };
