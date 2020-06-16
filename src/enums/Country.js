@@ -1,31 +1,25 @@
 import {create, namesToArray, getById} from './General';
 
 export const enums = create({
-  OMAN: 0,
-  KUWAIT: 1,
-  UAE: 2,
-  INDIA: 3,
-  QATAR: 4,
-  SAUDI_ARABIA: 5,
-  BAHRAIN: 6,
-  EGYPT: 7,
-  TURKEY: 8,
-  SOUTH_AFRICA: 9,
-  OTHER: 10,
+  UAE: 0,
+  SAUDI_ARABIA: 1,
+  OMAN: 2,
+  QATAR: 3,
+  BAHRAIN: 4,
+  KUWAIT: 5,
+  EGYPT: 6,
+  JORDAN: 7
 });
 
 const names = {
-  [enums.OMAN]: 'Oman',
-  [enums.KUWAIT]: 'Kuwait',
   [enums.UAE]: 'UAE',
-  [enums.INDIA]: 'India',
-  [enums.QATAR]: 'Qatar',
   [enums.SAUDI_ARABIA]: 'Saudi Arabia',
-  [enums.EGYPT]: 'Egypt',
+  [enums.OMAN]: 'Oman',
+  [enums.QATAR]: 'Qatar',
   [enums.BAHRAIN]: 'Bahrain',
-  [enums.TURKEY]: 'Turkey',
-  [enums.SOUTH_AFRICA]: 'South Africa',
-  [enums.OTHER]: 'Other',
+  [enums.KUWAIT]: 'Kuwait',
+  [enums.EGYPT]: 'Egypt',
+  [enums.JORDAN]: 'Jordan',
 };
 
 export const getSingleCountry = (key) => getById(names, key);

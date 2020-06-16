@@ -1,15 +1,15 @@
 import {create, namesToArray, getById} from './General';
 
 export const enums = create({
-  PROTIVITI: 0,
-  ROYAL_DUTCH_SHELL: 1,
-  WALMART: 2
+  MIDDLE_EAST: 0,
+  UK: 1,
+  EUROPE: 2
 });
 
 const names = {
-  [enums.PROTIVITI]: 'PwC',
-  [enums.ROYAL_DUTCH_SHELL]: 'Royal Dutch Shell',
-  [enums.WALMART]: 'Walmart',
+  [enums.MIDDLE_EAST]: 'PwC Middle East',
+  [enums.UK]: 'PwC UK',
+  [enums.EUROPE]: 'PwC Europe',
 };
 
 export const getSingleEntity = (key) => getById(names, key);

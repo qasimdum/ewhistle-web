@@ -127,7 +127,7 @@ function AllegationNature(props) {
           labelAlign={"left"}
           key="fraudulentAllegationNature"
           name="fraudulentAllegationNature"
-          label={'The nature of the fraudulent Allegation is'}
+          label={'What is the category of the fraudulent allegation'}
           rules={[
             {
               required: true,
@@ -921,7 +921,7 @@ function AllegationNature(props) {
             key="misconductAllegationNature"
             name="misconductAllegationNature"
             label={
-              <span>The nature of the misconduct allegation is &nbsp;
+              <span>What is the category of the misconduct allegation &nbsp;
                 <Tooltip
                   title="Insubordination: is the act of willfully disobeying one's superior. Refusing to perform an action that is unethical or illegal is not insubordination; neither is refusing to perform an action that is not within the scope of authority of the person issuing the order">
                     <QuestionCircleOutlined/>
@@ -974,7 +974,7 @@ function AllegationNature(props) {
           labelAlign={"left"}
           key="allegationDescription"
           name="allegationDescription"
-          label={'Kindly use the space below to provide a brief description of the allegation'}
+          label={'In your own words, please describe the allegation'}
           rules={[
             {
               required: true,
@@ -1026,7 +1026,7 @@ function AllegationNature(props) {
           labelAlign={"left"}
           key="jobTitle"
           name="jobTitle"
-          label={'The person+(s) involved is(are)'}
+          label={'The person involved is(are)'}
           rules={[
             {
               required: true,
@@ -1059,7 +1059,7 @@ function AllegationNature(props) {
           labelAlign={"left"}
           key="awareReason"
           name="awareReason"
-          label={'I became aware about the misconduct because'}
+          label={'How you became aware of the misconduct'}
           rules={[
             {
               required: true,
@@ -1072,7 +1072,7 @@ function AllegationNature(props) {
                                                     value={item.key}>{item.value}</Select.Option>)}
           </Select>
         </Form.Item>,
-        <Form.Item
+        /*<Form.Item
           {...formItemLayout}
           labelAlign={"left"}
           key="certainty"
@@ -1089,13 +1089,13 @@ function AllegationNature(props) {
             {certainties.map(item => <Select.Option key={item.key}
                                                     value={item.key}>{item.value}</Select.Option>)}
           </Select>
-        </Form.Item>,
+        </Form.Item>,*/
         <Form.Item
           {...formItemLayout}
           labelAlign={"left"}
           key="severity"
           name="severity"
-          label={'I would classify the severity of the allegation'}
+          label={'How severe is the allegation'}
           rules={[
             {
               required: true,
@@ -1113,7 +1113,7 @@ function AllegationNature(props) {
           labelAlign={"left"}
           key="impact"
           name="impact"
-          label={'I would classify the monetary impact of the fraudulent act'}
+          label={'What is the monetary impact (in USD)'}
           rules={[
             {
               required: true,

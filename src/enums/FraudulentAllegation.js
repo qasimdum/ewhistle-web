@@ -8,7 +8,7 @@ export const enums = create({
   COMPUTER_INTERNET_FRAUD: 4,
   CONTRACT_PROCUREMENT_FRAUD: 5,
   CONSUMER_FRAUD: 6,
-  FINANCIAL_INSTITUTION_FRAUD: 7,
+  /*FINANCIAL_INSTITUTION_FRAUD: 7,
   FINANCIAL_STATEMENT_FRAUD: 8,
   HEALTHCARE_FRAUD: 9,
   HR_FRAUD: 10,
@@ -18,18 +18,18 @@ export const enums = create({
   TAX_FRAUD: 14,
   SECURITY_FRAUD: 15,
   PAYMENT_FRAUD: 16,
-  PUBLIC_SECTOR_FRAUD: 17,
+  PUBLIC_SECTOR_FRAUD: 17,*/
 });
 
 const names = {
   [enums.ASSET_MISAPROPRIATION]: 'Asset misappropriation',
   [enums.BRIBERY]: 'Bribery',
   [enums.BANKRUPTCY_FRAUD]: 'Bankruptcy fraud',
-  [enums.CHECK_CREDIT_FRAUD]: 'Check & credit card fraud',
-  [enums.COMPUTER_INTERNET_FRAUD]: 'Computer and internet fraud',
-  [enums.CONTRACT_PROCUREMENT_FRAUD]: 'Contract and procurement fraud',
+  [enums.CHECK_CREDIT_FRAUD]: 'Check and credit card fraud',
+  [enums.COMPUTER_INTERNET_FRAUD]: 'Internet fraud',
+  [enums.CONTRACT_PROCUREMENT_FRAUD]: 'Contract/procurement fraud',
   [enums.CONSUMER_FRAUD]: 'Consumer fraud',
-  [enums.FINANCIAL_INSTITUTION_FRAUD]: 'Financial Institution fraud',
+  /*[enums.FINANCIAL_INSTITUTION_FRAUD]: 'Financial Institution fraud',
   [enums.FINANCIAL_STATEMENT_FRAUD]: 'Financial Statement fraud',
   [enums.HEALTHCARE_FRAUD]: 'Healthcare fraud',
   [enums.HR_FRAUD]: 'HR Frauds',
@@ -39,7 +39,7 @@ const names = {
   [enums.TAX_FRAUD]: 'Tax fraud',
   [enums.SECURITY_FRAUD]: 'Security fraud',
   [enums.PAYMENT_FRAUD]: 'Payment Fraud to generate false payments',
-  [enums.PUBLIC_SECTOR_FRAUD]: 'Public sector fraud',
+  [enums.PUBLIC_SECTOR_FRAUD]: 'Public sector fraud',*/
 };
 
 export const getSingleFraudulentAllegation = (key) => getById(names, key);

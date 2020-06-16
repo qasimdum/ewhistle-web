@@ -1,19 +1,21 @@
 import {create, namesToArray, getById} from './General';
 
 export const enums = create({
-  LESS_15000: 0,
-  OMR_15001_30000: 1,
-  OMR_30001_60000: 2,
-  ABOVE_60001: 3,
-  DONT_KNOW: 4,
+  LESS_5000: 0,
+  OMR_5001_25000: 1,
+  OMR_25000_75000: 2,
+  OMR_75000_150000: 3,
+  OMR_150000_ABOVE: 4,
+  DONT_KNOW: 5,
 });
 
 const names = {
-  [enums.LESS_15000]: 'Less than OMR 15,000',
-  [enums.OMR_15001_30000]: 'OMR 15,001 - OMR 30,000',
-  [enums.OMR_30001_60000]: 'OMR 30,001 and OMR 60,000',
-  [enums.ABOVE_60001]: 'Above OMR 60,001',
-  [enums.DONT_KNOW]: 'I don\'t know',
+  [enums.LESS_5000]: 'Less than $5000',
+  [enums.OMR_5001_25000]: '$5000 - $25,000',
+  [enums.OMR_25000_75000]: '$25,000 - $75,000',
+  [enums.OMR_75000_150000]: '$75,000 - $150,000',
+  [enums.OMR_150000_ABOVE]: '$150,000 +',
+  [enums.DONT_KNOW]: 'UNSURE',
 };
 
 export const getSingleImpact = (key) => getById(names, key);

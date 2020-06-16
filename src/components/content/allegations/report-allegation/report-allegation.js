@@ -81,17 +81,17 @@ function ReportAllegation(props) {
 
   function allegationNatureChange(v) {
     v = parseInt(v);
-    if (v === allegationNatureEnums.ACTUAL_FRAUD || v === allegationNatureEnums.SUSPECTED_FRAUD) {
+    if (v === allegationNatureEnums.FRAUD) {
       setShowAllegationNature1(true);
       setShowAllegationNature2(false);
       setShowAllegationNature3(false);
     } else {
-      if (v === allegationNatureEnums.ACTUAL_MISCONDUCT || v === allegationNatureEnums.SUSPECTED_MISCONDUCT) {
+      if (v === allegationNatureEnums.MISCONDUCT) {
         setShowAllegationNature1(false);
         setShowAllegationNature2(true);
         setShowAllegationNature3(false);
       } else {
-        if (v === allegationNatureEnums.POTENTIAL_HSE_INCIDENT || v === allegationNatureEnums.ACTUAL_HSE_INCIDENT) {
+        if (v === allegationNatureEnums.HSE_INCIDENT) {
           setShowAllegationNature1(false);
           setShowAllegationNature2(false);
           setShowAllegationNature3(true);
@@ -122,7 +122,7 @@ function ReportAllegation(props) {
             {...formItemLayout}
             name="entity"
             labelAlign={"left"}
-            label={'Name of Entity/Branch'}
+            label={'Name of organisation'}
             rules={[
               {
                 required: true,
@@ -154,7 +154,7 @@ function ReportAllegation(props) {
             {...formItemLayout}
             labelAlign={"left"}
             name="jobPosition"
-            label={'I am'}
+            label={'Your role'}
             rules={[
               {
                 required: true,
@@ -170,7 +170,7 @@ function ReportAllegation(props) {
             {...formItemLayout}
             labelAlign={"left"}
             name="allegationNature"
-            label={'Nature of allegation being reported'}
+            label={'Type of allegation'}
             rules={[
               {
                 required: true,
