@@ -6,7 +6,6 @@ import misconductAllegations from '../../../../../enums/MisconductAllegation';
 import jobTitles from '../../../../../enums/JobTitle';
 import departments, {enums as departmentEnums} from '../../../../../enums/Department';
 import awareReason from '../../../../../enums/AwareReason';
-import certainties from '../../../../../enums/Certainty';
 import severities from '../../../../../enums/Severity';
 import impacts from '../../../../../enums/Impact';
 import healthSafeties from '../../../../../enums/HealthSafety';

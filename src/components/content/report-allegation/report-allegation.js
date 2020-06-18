@@ -1,16 +1,16 @@
 import React from 'react';
-import {Button, Form, Input, Select, Radio, DatePicker, Upload, message} from "antd";
+import {Button, DatePicker, Form, Input, message, Radio, Select, Upload} from "antd";
 import './report-allegation.css';
 import entities from '../../../enums/Entities';
 import booleans, {enums as booleanEnums} from '../../../enums/Boolean';
 import allegationNatures, {enums as allegationNatureEnums} from '../../../enums/AllegationNature';
-import allegationOccurrences from '../../../enums/AllegationOccurrence';
+import allegationOccurrences, {enums as occurrenceEnum} from '../../../enums/AllegationOccurrence';
+import {enums as jobPositionEnum} from '../../../enums/JobPosition';
 import countries from '../../../enums/Country';
 import jobPositions from '../../../enums/JobPosition';
 import {UploadOutlined} from '@ant-design/icons';
 import AllegationNature from "./allegation-nature/allegation-nature";
-import {saveAllegation} from '../../../axios/allegations';
-import {uploadFile} from "../../../axios/allegations";
+import {saveAllegation, uploadFile} from '../../../axios/allegations';
 import {useHistory} from 'react-router-dom';
 
 function ReportAllegation() {
@@ -20,6 +20,8 @@ function ReportAllegation() {
   const [showAdditionalInformation, setShowAdditionalInformation] = React.useState(false);
   const [showEvidence, setShowEvidence] = React.useState(false);
   const [showContactInfo, setShowContactInfo] = React.useState(false);
+  const [showOtherRoleInput, setOtherRoleInput] = React.useState(false);
+  const [allegationOccurrence, setAllegationOccurrence] = React.useState(null);
 
   const [showAllegationNature1, setShowAllegationNature1] = React.useState(false);
   const [showAllegationNature2, setShowAllegationNature2] = React.useState(false);
@@ -162,10 +164,27 @@ function ReportAllegation() {
             },
           ]}
         >
-          <Select>
+          <Select onChange={e => setOtherRoleInput(parseInt(e) === jobPositionEnum.OTHER)}>
             {jobPositions.map(item => <Select.Option key={item.key} value={item.key}>{item.value}</Select.Option>)}
           </Select>
         </Form.Item>
+        {showOtherRoleInput ? (
+          <Form.Item
+            {...formItemLayout}
+            labelAlign={"left"}
+            name="otherJobPosition"
+            label={'Other'}
+            hasFeedback
+            rules={[
+              {
+                required: true,
+                message: 'This field is required',
+              },
+            ]}
+          >
+            <Input />
+          </Form.Item>
+        ) : null}
         <Form.Item
           {...formItemLayout}
           labelAlign={"left"}
@@ -197,7 +216,9 @@ function ReportAllegation() {
             },
           ]}
         >
-          <Radio.Group>
+          <Radio.Group onChange={(e) => {
+            setAllegationOccurrence(parseInt(e.target.value))
+          }}>
             {allegationOccurrences.map(item => <Radio key={item.key} value={item.key}>{item.value}</Radio>)}
           </Radio.Group>
         </Form.Item>
@@ -214,7 +235,19 @@ function ReportAllegation() {
             },
           ]}
         >
-          <DatePicker format={'DD/MM/YYYY'}/>
+          <DatePicker format={'DD/MM/YYYY'}
+                      disabledDate={current => {
+                        if (allegationOccurrence === occurrenceEnum.ALREADY_OCCURRED) {
+                          return current > new Date();
+                        }
+                        if (allegationOccurrence === occurrenceEnum.MAY_OCCUR) {
+                          return current < new Date();
+                        }
+                        if (allegationOccurrence === occurrenceEnum.STILL_OCCURRING) {
+                          return current > new Date();
+                        }
+                        return true
+                      }}/>
         </Form.Item>
         <Form.Item
           {...formItemLayout}

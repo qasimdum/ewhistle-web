@@ -4,6 +4,7 @@ import './report-allegation.css';
 import entities from '../../../../enums/Entities';
 import booleans, {enums as booleanEnums} from '../../../../enums/Boolean';
 import allegationNatures, {enums as allegationNatureEnums} from '../../../../enums/AllegationNature';
+import {enums as jobPositionEnum} from '../../../../enums/JobPosition';
 import allegationOccurrences from '../../../../enums/AllegationOccurrence';
 import countries from '../../../../enums/Country';
 import jobPositions from '../../../../enums/JobPosition';
@@ -19,6 +20,7 @@ function ReportAllegation(props) {
   const [showAdditionalInformation, setShowAdditionalInformation] = React.useState(false);
   const [showEvidence, setShowEvidence] = React.useState(false);
   const [showContactInfo, setShowContactInfo] = React.useState(false);
+  const [showOtherRoleInput, setOtherRoleInput] = React.useState(false);
 
   const [showAllegationNature1, setShowAllegationNature1] = React.useState(false);
   const [showAllegationNature2, setShowAllegationNature2] = React.useState(false);
@@ -75,6 +77,9 @@ function ReportAllegation(props) {
     }
     if(parseInt(data.radioEvidence) === booleanEnums.YES) {
       setShowEvidence(true);
+    }
+    if(parseInt(data.jobPosition) === jobPositionEnum.OTHER) {
+      setOtherRoleInput(true);
     }
     return data;
   }
@@ -166,6 +171,23 @@ function ReportAllegation(props) {
               {jobPositions.map(item => <Select.Option key={item.key} value={item.key}>{item.value}</Select.Option>)}
             </Select>
           </Form.Item>
+          {showOtherRoleInput ? (
+            <Form.Item
+              {...formItemLayout}
+              labelAlign={"left"}
+              name="otherJobPosition"
+              label={'Other'}
+              hasFeedback
+              rules={[
+                {
+                  required: true,
+                  message: 'This field is required',
+                },
+              ]}
+            >
+              <Input disabled />
+            </Form.Item>
+          ) : null}
           <Form.Item
             {...formItemLayout}
             labelAlign={"left"}
