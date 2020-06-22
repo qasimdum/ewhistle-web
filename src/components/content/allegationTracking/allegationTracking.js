@@ -44,8 +44,37 @@ function AllegationTracking() {
   }
 
   return (
+    <>
+      <section className="page-section page-section--no-pad fullwidth section-col--white">
+        <div className="parsys sectionpar">
+            <div className="container dpe-component-wrapper pwc-forms">
+
+              <Form onFinish={onSubmit}>
+                <Form.Item
+                  {...formItemLayout}
+                  name="trackingId"
+                  labelAlign={"left"}
+                  label={'Allegation Tracking Code'}
+                  className={'pwc-forms__field pwc-forms__field--text form-group'}
+                  rules={[
+                    {
+                      required: true,
+                      message: 'This field is required',
+                    },
+                  ]}
+                >
+                  <Input className={'form-control'}/>
+                </Form.Item>
+                <Form.Item>
+                  <button type={'submit'} className={'btn btn--primary btn--transparent'}>Submit</button>
+                </Form.Item>
+              </Form>
+            </div>
+        </div>
+      </section>
     <div className={'allegation-tracking'}>
-      <Form onFinish={onSubmit}>
+
+      {/*<Form onFinish={onSubmit}>
         <Form.Item
           {...formItemLayout}
           name="trackingId"
@@ -63,7 +92,7 @@ function AllegationTracking() {
         <Form.Item>
           <Button htmlType={'submit'}>Submit</Button>
         </Form.Item>
-      </Form>
+      </Form>*/}
 
       {data ? (
         <>
@@ -79,6 +108,7 @@ function AllegationTracking() {
         </>
       ) : null}
     </div>
+      </>
   )
 }
 

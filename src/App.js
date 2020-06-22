@@ -4,6 +4,10 @@ import {Layout} from "antd";
 import Content from "./components/content/content";
 import BackendContent from "./components/content/backendContent";
 import {useHistory} from 'react-router-dom';
+import './base.css';
+import './pwc-forms.css';
+
+
 const {Footer} = Layout;
 
 function App() {
@@ -22,11 +26,9 @@ function App() {
       break;
   }
   return (
-    <div className="App">
-      <Layout>
+    <div className="page-container" role="main">
         {content}
         <Footer style={{textAlign: 'center'}}>Copywrite 2020 PwC</Footer>
-      </Layout>
     </div>
   );
 }

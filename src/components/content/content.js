@@ -8,11 +8,7 @@ function FrontContent() {
   return (
     <>
       <Header/>
-      <Layout.Content className="site-layout" style={{padding: '0 50px'}}>
-        <div className="site-layout-background" style={{padding: 24, minHeight: 380}}>
-          <PublicRoutes/>
-        </div>
-      </Layout.Content>
+      <PublicRoutes/>
     </>
   )
 }

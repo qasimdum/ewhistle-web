@@ -6,10 +6,53 @@ import Image2 from '../../../assets/image_2.png';
 import Image3 from '../../../assets/image_3.jpg';
 import Image4 from '../../../assets/image_4.jpg';
 import AboutTheProcess from "../aboutTheProcess/aboutTheProcess";
+import BackgroundImage1 from "../../../assets/header_1.webp";
 
 function Home() {
 
   return (
+    <>
+      <section id="title"
+               className="no-background__mobile page-section page-section--col-primary page-section--col-dark nomove fullwidth   videobghost "
+               style={{backgroundSize: 'cover', backgroundPosition: 'center top', backgroundImage: `url(${BackgroundImage1})`}}>
+
+
+        <div className="parsys sectionpar">
+          <div className="herotitle section">
+
+
+            <div className="dpe-component-wrapper hero-title-component hero-title-component--lg-h1">
+              <div className="hero-title hero-title-textpanel--compaign">
+                <div className="container">
+                  <div className="row hero-title-row--compaign">
+                    <div className="textColumn col-sm-8">
+                      <div className="hero-title-textpanel">
+                        <h1>
+                                <span className="compaign-hlight__inner">
+                                    Report Allegation
+                                </span>
+                        </h1>
+                        <p className="sub-heading">
+                                <span className="compaign-hlight__inner">
+                                    Your electronic Whistleblowing platform
+                                </span>
+                        </p>
+
+
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+            </div>
+
+
+          </div>
+
+
+        </div>
+      </section>
     <div className={'home'}>
       <div className={'tabs-title'}>About the Platform</div>
       <Tabs defaultActiveKey="1" onChange={() => {}} className={'home-tabs'}>
@@ -79,6 +122,7 @@ function Home() {
       <div className={'tabs-title'}>About the Process</div>
       <AboutTheProcess/>
     </div>
+      </>
   )
 }
 
