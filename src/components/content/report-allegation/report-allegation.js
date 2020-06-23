@@ -64,6 +64,17 @@ function ReportAllegation() {
       })
   }
 
+  function getMaxMinDate() {
+    const minMax = {min: null, max: null};
+    if (allegationOccurrence === occurrenceEnum.ALREADY_OCCURRED || allegationOccurrence === occurrenceEnum.STILL_OCCURRING) {
+      minMax.max = new Date().toISOString().split("T")[0];
+    }
+    if (allegationOccurrence === occurrenceEnum.MAY_OCCUR) {
+      minMax.min = new Date().toISOString().split("T")[0];
+    }
+    return minMax
+  }
+
   function onFinishFailed(er) {
     console.error(er);
   }
@@ -228,7 +239,7 @@ function ReportAllegation() {
               labelAlign={"left"}
               name="allegationDate"
               label={'Date of actual allegation'}
-              hasFeedback
+              className={'pwc-forms__field pwc-forms__field--date form-group'}
               rules={[
                 {
                   required: true,
@@ -236,7 +247,8 @@ function ReportAllegation() {
                 },
               ]}
             >
-              <DatePicker format={'DD/MM/YYYY'}
+              <input {...getMaxMinDate()} type={'date'} className={'form-control pwc-form-datepicker__input'} placeholder={'MM/DD/YYYY'}/>
+              {/*<DatePicker format={'DD/MM/YYYY'}
                           disabledDate={current => {
                             if (allegationOccurrence === occurrenceEnum.ALREADY_OCCURRED) {
                               return current > new Date();
@@ -248,7 +260,7 @@ function ReportAllegation() {
                               return current > new Date();
                             }
                             return true
-                          }}/>
+                          }}/>*/}
             </Form.Item>
             <Form.Item
               {...formItemLayout}
@@ -337,15 +349,15 @@ function ReportAllegation() {
               {...formItemLayout}
               labelAlign={"left"}
               name="evidence"
-              valuePropName="fileList"
               getValueFromEvent={(e) => {
-                if (Array.isArray(e)) {
-                  return e;
+                /*if (Array.isArray(e.target.files)) {
+                  return e.target.files;
                 }
-                return e && e.fileList;
+                return e && e.fileList;*/
+                return e.target.files
               }}
               label={'Attach evidence'}
-              hasFeedback
+              className={'pwc-forms__field pwc-forms__field--file form-group'}
               rules={[
                 {
                   required: true,
@@ -353,14 +365,17 @@ function ReportAllegation() {
                 },
               ]}
             >
-              <Upload defaultFileList={[]} beforeUpload={(e) => {
+              <div className={'form-control form-control--transparent form-control--fileupload-wrapper'}>
+                <input type={'file'} onChange={e => setFile(e.target.files[0])} />
+              </div>
+              {/*<Upload defaultFileList={[]} beforeUpload={(e) => {
                 setFile(e);
                 return false;
               }}>
                 <Button>
                   <UploadOutlined/> Click to Upload
                 </Button>
-              </Upload>
+              </Upload>*/}
             </Form.Item> : null}
             <Form.Item
               {...formItemLayout}
