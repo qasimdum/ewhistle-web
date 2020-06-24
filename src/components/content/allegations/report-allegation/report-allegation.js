@@ -46,9 +46,9 @@ function ReportAllegation(props) {
   }, [props.allegationId]);
 
   function generateFormValues(data) {
-    if (data.allegationDate) {
-      data.allegationDate = "";
-    }
+    /*if (data.allegationDate) {
+      data.allegationDate = "2020-2-02";
+    }*/
     for (let key in data) {
       if (data[key] !== null) {
         data[key] += '';
@@ -236,7 +236,9 @@ function ReportAllegation(props) {
             {...formItemLayout}
             labelAlign={"left"}
             name="allegationDate"
+            validateStatus={'123'}
             label={'Date of actual allegation'}
+            className={'pwc-forms__field pwc-forms__field--date form-group'}
             rules={[
               {
                 required: true,
@@ -244,7 +246,8 @@ function ReportAllegation(props) {
               },
             ]}
           >
-            <DatePicker disabled format={'DD/MM/YYYY'}/>
+            <input type={'date'} disabled className={'form-control pwc-form-datepicker__input'} placeholder={'MM/DD/YYYY'}/>
+            {/*<DatePicker disabled format={'DD/MM/YYYY'}/>*/}
           </Form.Item>
           <Form.Item
             {...formItemLayout}
