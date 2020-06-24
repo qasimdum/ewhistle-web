@@ -6,6 +6,7 @@ import BackendContent from "./components/content/backendContent";
 import {useHistory} from 'react-router-dom';
 import './base.css';
 import './pwc-forms.css';
+import './featured-tabs.css';
 
 
 const {Footer} = Layout;

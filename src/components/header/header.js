@@ -66,6 +66,7 @@ function HeaderPage() {
           <div
             className="glb-slim-header glb-slim-header--simple glb-slim-header--has-breadcrumb  glb-slim-header--togglebreadcrumb"
             id="glbSlimHeader">
+            {/*glb-slim-header-wrapper slide headroom--not-top glb-slim-header-wrapper--unpinned headroom--bottom*/}
             <div className="glb-slim-header-wrapper " id="glbSlimHeaderWrapper">
               <div className="glb-slim-header__bar" id="glbSlimHeaderBar">
                 <div className="container glb-slim-header__container">
@@ -109,91 +110,6 @@ function HeaderPage() {
                                 <li><NavLink onClick={() => setSelectedMenu('/allegation_tracking')}  exact to={'/allegation_tracking'}>Allegation status</NavLink></li>
                                 <li><NavLink onClick={() => setSelectedMenu('/signin')}  exact to={'/signin'}>Admin Login</NavLink></li>
                               </ul>
-                            </div>
-                          </div>
-                        </div>
-                        <div className="glb-nav__tools">
-
-                          <div className="glb-nav__tools__tool glb-nav__tools__tool--dropdown ">
-                            <div className="glb-nav__tools__tool-content">
-                              <form className="pwc-inline-form" action="urlforfallbackprocessingpage.html"
-                                    method="get">
-                                <div
-                                  className="pwc-inline-form__field pwc-inline-form__field--select2  pwc-inline-form__field--dropdown form-group">
-                                  <label className="sr-only field-label " htmlFor="languageSelector">View this
-                                    content in</label>
-
-                                  <select id="languageSelectorMobile" name="languageSelectorMobile"
-                                          style={{width: '100%'}}>
-                                    <optgroup label="Choose a language:">
-                                      <option value="http://pwc.com/en/" selected="">English
-                                      </option>
-                                      <option value="http://pwc.com/fr/">French</option>
-                                      <option value="http://pwc.com/nl/">Dutch</option>
-                                    </optgroup>
-
-                                  </select>
-                                </div>
-
-                                <button type="submit" className="sr-only btn btn--primary" role="button"
-                                        tabIndex="-1">Submit
-                                </button>
-                              </form>
-                            </div>
-                          </div>
-                          <div className="glb-nav__tools__tool glb-nav__tools__tool--dropdown ">
-                            <div className="glb-nav__tools__tool-content">
-                              <form className="pwc-inline-form" action="urlforfallbackprocessingpage.html"
-                                    method="get">
-                                <div
-                                  className="pwc-inline-form__field pwc-inline-form__field--select2 pwc-inline-form__field--auto-suggest form-group">
-                                  <label className="sr-only field-label " htmlFor="territorySelector">Change
-                                    country</label>
-                                  <select id="territorySelectorMobile" name="territorySelectorMobile"
-                                          style={{width: '100%'}}>
-                                    <optgroup label="Choose a country:">
-                                      <option value="http://pwc.com">Global</option>
-                                      <option value="http://pwc.com.au" selected="">Australia
-                                      </option>
-                                      <option value="http://www.pwc.com/at">Austria</option>
-                                      <option value="http://www.pwc.com/br">Brazil</option>
-                                      <option value="http://www.pwc.com/ca">Canada</option>
-                                      <option value="http://www.pwc.com/fr">France</option>
-                                      <option value="http://www.pwc.com/de">Germany</option>
-                                      <option value="http://www.pwc.com/cn-s/home">Greater China
-                                      </option>
-                                      <option value="http://www.pwc.com/in">India</option>
-                                      <option value="http://www.pwc.com/il/home">Israel</option>
-                                      <option value="http://www.pwc.com/it">Italy</option>
-                                      <option value="http://www.pwc.com/jp/home">Japan</option>
-                                      <option value="http://www.pwc.com/la/home">Argentina, Chile,
-                                        Colombia, Peru, Venezuela
-                                      </option>
-                                      <option value="http://www.pwc.com/mx/home">México</option>
-                                      <option value="http://www.pwc.com/me/home">UAE, Lebanon,
-                                        Saudi Arabia, Egypt, Qatar
-                                      </option>
-                                      <option value="http://www.pwc.com/nl/home">Netherlands
-                                      </option>
-                                      <option value="http://www.pwc.com/nordic/home">Denmark,
-                                        Finland, Norway, Sweden
-                                      </option>
-                                      <option value="http://www.pwc.com/na/home">USA</option>
-                                      <option value="http://www.pwc.com/ru-e/home">Russia</option>
-                                      <option value="http://www.pwc.com/es">Spain</option>
-                                      <option value="http://www.pwc.com/za/home">South Africa
-                                      </option>
-                                      <option value="http://www.pwc.com/sea/home">Indonesia,
-                                        Malaysia, Sing
-                                      </option>
-                                    </optgroup>
-                                  </select>
-                                </div>
-
-                                <button type="submit" className="sr-only btn btn--primary" role="button">
-                                  Submit
-                                </button>
-                              </form>
                             </div>
                           </div>
                         </div>
