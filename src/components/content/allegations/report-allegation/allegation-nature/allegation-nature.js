@@ -1,5 +1,5 @@
 import React, {useEffect} from 'react';
-import {Form, Input, Popover, Select, Tooltip} from "antd";
+import {Checkbox, Col, Form, Input, Popover, Row, Select, Tooltip} from "antd";
 import {QuestionCircleOutlined} from '@ant-design/icons';
 import fraudulentAllegations, {enums as fraudulentAllegationsEnum} from '../../../../../enums/FraudulentAllegation';
 import misconductAllegations from '../../../../../enums/MisconductAllegation';
@@ -46,63 +46,62 @@ function AllegationNature(props) {
   const [otherDepartment, setOtherDepartment] = React.useState([]);
 
   useEffect(() => {
-    if(props.data.fraudulentAllegationNature !== null) {
+    if (props.data.fraudulentAllegationNature !== null) {
       setFraudulentAllegation(props.data.fraudulentAllegationNature)
     }
-    if(props.data.assetMisappropriation === assetMisappropriationsEnum.OTHER) {
+    if (props.data.assetMisappropriation === assetMisappropriationsEnum.OTHER) {
       setOtherAssetMisappropriation(props.data.assetMisappropriation.toString());
     }
-    if(props.data.bribery === briberiesEnum.OTHER) {
+    if (props.data.bribery === briberiesEnum.OTHER) {
       setOtherBribery(props.data.bribery.toString());
     }
-    if(props.data.bankruptcyFraud === bankruptcyFraudEnums.OTHER) {
+    if (props.data.bankruptcyFraud === bankruptcyFraudEnums.OTHER) {
       setOtherBankruptcyFraud(props.data.bankruptcyFraud.toString());
     }
-    if(props.data.checkCreditCardFraud === checkAndCreditFraudEnums.OTHER) {
+    if (props.data.checkCreditCardFraud === checkAndCreditFraudEnums.OTHER) {
       setOtherCheckAndCreditFraud(props.data.checkCreditCardFraud.toString());
     }
-    if(props.data.computerInternetFraud === computerInternetFraudEnums.OTHER) {
+    if (props.data.computerInternetFraud === computerInternetFraudEnums.OTHER) {
       setOtherComputerInternetFraud(props.data.computerInternetFraud.toString());
     }
-    if(props.data.contractProcurementFraud === contractProcurementFraudEnums.OTHER) {
+    if (props.data.contractProcurementFraud === contractProcurementFraudEnums.OTHER) {
       setOtherConntractProcurementFraud(props.data.contractProcurementFraud.toString());
     }
-    if(props.data.financialInstitutionFile === financialInstitutionFraudEnums.OTHER) {
+    if (props.data.financialInstitutionFile === financialInstitutionFraudEnums.OTHER) {
       setOtherFinancialInstitutionFraud(props.data.financialInstitutionFile.toString());
     }
-    if(props.data.healthcareFraud === healthcareFraudEnums.OTHER) {
+    if (props.data.healthcareFraud === healthcareFraudEnums.OTHER) {
       setOtherHelthcareFraud(props.data.healthcareFraud.toString());
     }
-    if(props.data.hrFraud === hrFraudEnums.OTHER) {
+    if (props.data.hrFraud === hrFraudEnums.OTHER) {
       setOtherHrFraud(props.data.hrFraud.toString());
     }
-    if(props.data.insuranceFraud === insuranceFraudEnums.OTHER) {
+    if (props.data.insuranceFraud === insuranceFraudEnums.OTHER) {
       setOtherInsuranceFraud(props.data.insuranceFraud.toString());
     }
-    if(props.data.insuranceFraud === insuranceFraudEnums.OTHER) {
+    if (props.data.insuranceFraud === insuranceFraudEnums.OTHER) {
       setOtherInsuranceFraud(props.data.insuranceFraud.toString());
     }
-    if(props.data.intellectualProperty === intellectualPropertyFraudEnums.OTHER) {
+    if (props.data.intellectualProperty === intellectualPropertyFraudEnums.OTHER) {
       setOtherIntellectualPropertyFraud(props.data.intellectualProperty.toString());
     }
-    if(props.data.paymentFraud === paymentFraudEnums.OTHER) {
+    if (props.data.paymentFraud === paymentFraudEnums.OTHER) {
       setOtherPaymentFraud(props.data.paymentFraud.toString());
     }
-    if(props.data.publicSectorFraud === publicSectorFraudEnums.OTHER) {
+    if (props.data.publicSectorFraud === publicSectorFraudEnums.OTHER) {
       setOtherPublicSectorFraud(props.data.publicSectorFraud.toString());
     }
-    if(props.data.securityFraud === securityFraudEnums.OTHER) {
+    if (props.data.securityFraud === securityFraudEnums.OTHER) {
       setOtherSecurityFraud(props.data.securityFraud.toString());
     }
-    if(props.data.taxFraud === taxFraudEnums.OTHER) {
+    if (props.data.taxFraud === taxFraudEnums.OTHER) {
       setOtherTaxFraud(props.data.taxFraud.toString());
     }
-    if(props.data.departments) {
+    if (props.data.departments) {
       try {
         const departments = JSON.parse(props.data.departments).map(item => item.toString());
         setOtherDepartment(departments);
-      }
-      catch (e) {
+      } catch (e) {
 
       }
     }
@@ -127,6 +126,7 @@ function AllegationNature(props) {
           key="fraudulentAllegationNature"
           name="fraudulentAllegationNature"
           label={'What is the category of the fraudulent allegation'}
+          className={'pwc-forms__field pwc-forms__field--select form-group'}
           rules={[
             {
               required: true,
@@ -134,7 +134,7 @@ function AllegationNature(props) {
             },
           ]}
         >
-          <Select disabled onChange={e => setFraudulentAllegation(e)}>
+          <Select disabled onChange={e => setFraudulentAllegation(e)} className={'select-form-control'}>
             {fraudulentAllegations.map(item => <Select.Option key={item.key}
                                                               value={item.key}>{item.value}</Select.Option>)}
           </Select>
@@ -158,6 +158,7 @@ function AllegationNature(props) {
                   </Tooltip>
                 </span>
               }
+              className={'pwc-forms__field pwc-forms__field--select form-group'}
               rules={[
                 {
                   required: true,
@@ -165,7 +166,7 @@ function AllegationNature(props) {
                 },
               ]}
             >
-              <Select disabled onChange={(e) => setOtherAssetMisappropriation(e)}>
+              <Select disabled onChange={(e) => setOtherAssetMisappropriation(e)} className={'select-form-control'}>
                 {assetMisappropriation.map(item => <Select.Option key={item.key}
                                                                   value={item.key}>{item.value}</Select.Option>)}
               </Select>
@@ -180,6 +181,7 @@ function AllegationNature(props) {
                 name="otherAssetMisappropriation"
                 key="otherAssetMisappropriation"
                 label={'Other'}
+                className={'pwc-forms__field pwc-forms__field--text form-group'}
                 rules={[
                   {
                     required: true,
@@ -187,7 +189,7 @@ function AllegationNature(props) {
                   },
                 ]}
               >
-                <Input disabled/>
+                <Input disabled className={'form-control'}/>
               </Form.Item>
             ]
           }
@@ -208,6 +210,7 @@ function AllegationNature(props) {
                   </Tooltip>
                 </span>
               }
+              className={'pwc-forms__field pwc-forms__field--select form-group'}
               rules={[
                 {
                   required: true,
@@ -215,7 +218,7 @@ function AllegationNature(props) {
                 },
               ]}
             >
-              <Select disabled onChange={e => setOtherBribery(e)}>
+              <Select disabled onChange={e => setOtherBribery(e)} className={'select-form-control'}>
                 {briberies.map(item => <Select.Option key={item.key}
                                                       value={item.key}>{item.value}</Select.Option>)}
               </Select>
@@ -230,6 +233,7 @@ function AllegationNature(props) {
                 labelAlign={"left"}
                 name="otherBribery"
                 key="otherBribery"
+                className={'pwc-forms__field pwc-forms__field--text form-group'}
                 label={'Other'}
                 rules={[
                   {
@@ -238,7 +242,7 @@ function AllegationNature(props) {
                   },
                 ]}
               >
-                <Input disabled/>
+                <Input disabled className={'form-control'}/>
               </Form.Item>
             ]
           }
@@ -259,6 +263,7 @@ function AllegationNature(props) {
                   </Tooltip>
                 </span>
               }
+              className={'pwc-forms__field pwc-forms__field--select form-group'}
               rules={[
                 {
                   required: true,
@@ -266,7 +271,7 @@ function AllegationNature(props) {
                 },
               ]}
             >
-              <Select disabled onChange={e => setOtherBankruptcyFraud(e)}>
+              <Select disabled onChange={e => setOtherBankruptcyFraud(e)} className={'select-form-control'}>
                 {bankruptcyFrauds.map(item => <Select.Option key={item.key}
                                                              value={item.key}>{item.value}</Select.Option>)}
               </Select>
@@ -282,6 +287,7 @@ function AllegationNature(props) {
                 name="otherBankruptcyFraud"
                 key="otherBankruptcyFraud"
                 label={'Other'}
+                className={'pwc-forms__field pwc-forms__field--text form-group'}
                 rules={[
                   {
                     required: true,
@@ -289,7 +295,7 @@ function AllegationNature(props) {
                   },
                 ]}
               >
-                <Input disabled/>
+                <Input disabled className={'form-control'}/>
               </Form.Item>
             ]
           }
@@ -310,6 +316,7 @@ function AllegationNature(props) {
                   </Tooltip>
                 </span>
               }
+              className={'pwc-forms__field pwc-forms__field--select form-group'}
               rules={[
                 {
                   required: true,
@@ -317,7 +324,7 @@ function AllegationNature(props) {
                 },
               ]}
             >
-              <Select disabled onChange={e => setOtherCheckAndCreditFraud(e)}>
+              <Select disabled onChange={e => setOtherCheckAndCreditFraud(e)} className={'select-form-control'}>
                 {checkAndCreditFrauds.map(item => <Select.Option key={item.key}
                                                                  value={item.key}>{item.value}</Select.Option>)}
               </Select>
@@ -333,6 +340,7 @@ function AllegationNature(props) {
                 name="otherCheckCreditCardFraud"
                 key="otherCheckCreditCardFraud"
                 label={'Other'}
+                className={'pwc-forms__field pwc-forms__field--text form-group'}
                 rules={[
                   {
                     required: true,
@@ -340,7 +348,7 @@ function AllegationNature(props) {
                   },
                 ]}
               >
-                <Input disabled/>
+                <Input disabled className={'form-control'}/>
               </Form.Item>
             ]
           }
@@ -362,6 +370,7 @@ function AllegationNature(props) {
                   </Popover>
                 </span>
               }
+              className={'pwc-forms__field pwc-forms__field--select form-group'}
               rules={[
                 {
                   required: true,
@@ -369,7 +378,7 @@ function AllegationNature(props) {
                 },
               ]}
             >
-              <Select disabled onChange={e => setOtherComputerInternetFraud(e)}>
+              <Select disabled onChange={e => setOtherComputerInternetFraud(e)} className={'select-form-control'}>
                 {computerInternetFrauds.map(item => <Select.Option key={item.key}
                                                                    value={item.key}>{item.value}</Select.Option>)}
               </Select>
@@ -385,6 +394,7 @@ function AllegationNature(props) {
                 name="otherComputerInternetFraud"
                 key="otherComputerInternetFraud"
                 label={'Other'}
+                className={'pwc-forms__field pwc-forms__field--text form-group'}
                 rules={[
                   {
                     required: true,
@@ -392,7 +402,7 @@ function AllegationNature(props) {
                   },
                 ]}
               >
-                <Input disabled/>
+                <Input disabled className={'form-control'}/>
               </Form.Item>
             ]
           }
@@ -413,6 +423,7 @@ function AllegationNature(props) {
                   </Tooltip>
                 </span>
               }
+              className={'pwc-forms__field pwc-forms__field--select form-group'}
               rules={[
                 {
                   required: true,
@@ -420,9 +431,9 @@ function AllegationNature(props) {
                 },
               ]}
             >
-              <Select disabled onChange={e => setOtherConntractProcurementFraud(e)}>
+              <Select disabled onChange={e => setOtherConntractProcurementFraud(e)} className={'select-form-control'}>
                 {contractProcurementFrauds.map(item => <Select.Option key={item.key}
-                                                                 value={item.key}>{item.value}</Select.Option>)}
+                                                                      value={item.key}>{item.value}</Select.Option>)}
               </Select>
             </Form.Item>
           ];
@@ -436,6 +447,7 @@ function AllegationNature(props) {
                 name="otherContractProcurementFraud"
                 key="otherContractProcurementFraud"
                 label={'Other'}
+                className={'pwc-forms__field pwc-forms__field--text form-group'}
                 rules={[
                   {
                     required: true,
@@ -443,7 +455,7 @@ function AllegationNature(props) {
                   },
                 ]}
               >
-                <Input disabled/>
+                <Input disabled className={'form-control'}/>
               </Form.Item>
             ]
           }
@@ -464,6 +476,7 @@ function AllegationNature(props) {
                   </Tooltip>
                 </span>
               }
+              className={'pwc-forms__field pwc-forms__field--select form-group'}
               rules={[
                 {
                   required: true,
@@ -471,9 +484,9 @@ function AllegationNature(props) {
                 },
               ]}
             >
-              <Select disabled onChange={e => setOtherFinancialInstitutionFraud(e)}>
+              <Select disabled onChange={e => setOtherFinancialInstitutionFraud(e)} className={'select-form-control'}>
                 {financialInstitutionFrauds.map(item => <Select.Option key={item.key}
-                                                                      value={item.key}>{item.value}</Select.Option>)}
+                                                                       value={item.key}>{item.value}</Select.Option>)}
               </Select>
             </Form.Item>
           ];
@@ -487,6 +500,7 @@ function AllegationNature(props) {
                 name="otherFinancialInstitutionFraud"
                 key="otherFinancialInstitutionFraud"
                 label={'Other'}
+                className={'pwc-forms__field pwc-forms__field--text form-group'}
                 rules={[
                   {
                     required: true,
@@ -494,7 +508,7 @@ function AllegationNature(props) {
                   },
                 ]}
               >
-                <Input disabled/>
+                <Input disabled className={'form-control'}/>
               </Form.Item>
             ]
           }
@@ -515,6 +529,7 @@ function AllegationNature(props) {
                   </Tooltip>
                 </span>
               }
+              className={'pwc-forms__field pwc-forms__field--select form-group'}
               rules={[
                 {
                   required: true,
@@ -522,9 +537,9 @@ function AllegationNature(props) {
                 },
               ]}
             >
-              <Select disabled onChange={e => setOtherHelthcareFraud(e)}>
+              <Select disabled onChange={e => setOtherHelthcareFraud(e)} className={'select-form-control'}>
                 {helthcareFrauds.map(item => <Select.Option key={item.key}
-                                                                       value={item.key}>{item.value}</Select.Option>)}
+                                                            value={item.key}>{item.value}</Select.Option>)}
               </Select>
             </Form.Item>
           ];
@@ -538,6 +553,7 @@ function AllegationNature(props) {
                 name="otherHealthcareFraud"
                 key="otherHealthcareFraud"
                 label={'Other'}
+                className={'pwc-forms__field pwc-forms__field--text form-group'}
                 rules={[
                   {
                     required: true,
@@ -545,7 +561,7 @@ function AllegationNature(props) {
                   },
                 ]}
               >
-                <Input disabled/>
+                <Input disabled className={'form-control'}/>
               </Form.Item>
             ]
           }
@@ -566,6 +582,7 @@ function AllegationNature(props) {
                   </Tooltip>
                 </span>
               }
+              className={'pwc-forms__field pwc-forms__field--select form-group'}
               rules={[
                 {
                   required: true,
@@ -573,9 +590,9 @@ function AllegationNature(props) {
                 },
               ]}
             >
-              <Select disabled onChange={e => setOtherHrFraud(e)}>
+              <Select disabled onChange={e => setOtherHrFraud(e)} className={'select-form-control'}>
                 {hrFrauds.map(item => <Select.Option key={item.key}
-                                                            value={item.key}>{item.value}</Select.Option>)}
+                                                     value={item.key}>{item.value}</Select.Option>)}
               </Select>
             </Form.Item>
           ];
@@ -589,6 +606,7 @@ function AllegationNature(props) {
                 name="otherHrFraud"
                 key="otherHrFraud"
                 label={'Other'}
+                className={'pwc-forms__field pwc-forms__field--text form-group'}
                 rules={[
                   {
                     required: true,
@@ -596,7 +614,7 @@ function AllegationNature(props) {
                   },
                 ]}
               >
-                <Input disabled/>
+                <Input disabled className={'form-control'}/>
               </Form.Item>
             ]
           }
@@ -617,6 +635,7 @@ function AllegationNature(props) {
                   </Tooltip>
                 </span>
               }
+              className={'pwc-forms__field pwc-forms__field--select form-group'}
               rules={[
                 {
                   required: true,
@@ -624,9 +643,9 @@ function AllegationNature(props) {
                 },
               ]}
             >
-              <Select disabled onChange={e => setOtherIntellectualPropertyFraud(e)}>
+              <Select disabled onChange={e => setOtherIntellectualPropertyFraud(e)} className={'select-form-control'}>
                 {intellectualPropertyFrauds.map(item => <Select.Option key={item.key}
-                                                     value={item.key}>{item.value}</Select.Option>)}
+                                                                       value={item.key}>{item.value}</Select.Option>)}
               </Select>
             </Form.Item>
           ];
@@ -640,7 +659,7 @@ function AllegationNature(props) {
                 name="otherIntellectualPropertyFraud"
                 key="otherIntellectualPropertyFraud"
                 label={'Other'}
-
+                className={'pwc-forms__field pwc-forms__field--text form-group'}
                 rules={[
                   {
                     required: true,
@@ -648,7 +667,7 @@ function AllegationNature(props) {
                   },
                 ]}
               >
-                <Input disabled/>
+                <Input disabled className={'form-control'}/>
               </Form.Item>
             ]
           }
@@ -669,6 +688,7 @@ function AllegationNature(props) {
                   </Tooltip>
                 </span>
               }
+              className={'pwc-forms__field pwc-forms__field--select form-group'}
               rules={[
                 {
                   required: true,
@@ -676,9 +696,9 @@ function AllegationNature(props) {
                 },
               ]}
             >
-              <Select disabled onChange={e => setOtherInsuranceFraud(e)}>
+              <Select disabled onChange={e => setOtherInsuranceFraud(e)} className={'select-form-control'}>
                 {insuranceFrauds.map(item => <Select.Option key={item.key}
-                                                                       value={item.key}>{item.value}</Select.Option>)}
+                                                            value={item.key}>{item.value}</Select.Option>)}
               </Select>
             </Form.Item>
           ];
@@ -692,6 +712,7 @@ function AllegationNature(props) {
                 name="otherInsuranceFraud"
                 key="otherInsuranceFraud"
                 label={'Other'}
+                className={'pwc-forms__field pwc-forms__field--text form-group'}
                 rules={[
                   {
                     required: true,
@@ -699,7 +720,7 @@ function AllegationNature(props) {
                   },
                 ]}
               >
-                <Input disabled/>
+                <Input disabled className={'form-control'}/>
               </Form.Item>
             ]
           }
@@ -720,6 +741,7 @@ function AllegationNature(props) {
                   </Tooltip>
                 </span>
               }
+              className={'pwc-forms__field pwc-forms__field--select form-group'}
               rules={[
                 {
                   required: true,
@@ -727,9 +749,9 @@ function AllegationNature(props) {
                 },
               ]}
             >
-              <Select disabled onChange={e => setOtherTaxFraud(e)}>
+              <Select disabled onChange={e => setOtherTaxFraud(e)} className={'select-form-control'}>
                 {taxFrauds.map(item => <Select.Option key={item.key}
-                                                            value={item.key}>{item.value}</Select.Option>)}
+                                                      value={item.key}>{item.value}</Select.Option>)}
               </Select>
             </Form.Item>
           ];
@@ -743,6 +765,7 @@ function AllegationNature(props) {
                 name="otherTaxFraud"
                 key="otherTaxFraud"
                 label={'Other'}
+                className={'pwc-forms__field pwc-forms__field--text form-group'}
                 rules={[
                   {
                     required: true,
@@ -750,7 +773,7 @@ function AllegationNature(props) {
                   },
                 ]}
               >
-                <Input disabled/>
+                <Input disabled className={'form-control'}/>
               </Form.Item>
             ]
           }
@@ -771,6 +794,7 @@ function AllegationNature(props) {
                   </Tooltip>
                 </span>
               }
+              className={'pwc-forms__field pwc-forms__field--select form-group'}
               rules={[
                 {
                   required: true,
@@ -778,9 +802,9 @@ function AllegationNature(props) {
                 },
               ]}
             >
-              <Select disabled onChange={e => setOtherSecurityFraud(e)}>
+              <Select disabled onChange={e => setOtherSecurityFraud(e)} className={'select-form-control'}>
                 {securityFrauds.map(item => <Select.Option key={item.key}
-                                                      value={item.key}>{item.value}</Select.Option>)}
+                                                           value={item.key}>{item.value}</Select.Option>)}
               </Select>
             </Form.Item>
           ];
@@ -794,6 +818,7 @@ function AllegationNature(props) {
                 name="otherSecurityFraud"
                 key="otherSecurityFraud"
                 label={'Other'}
+                className={'pwc-forms__field pwc-forms__field--text form-group'}
                 rules={[
                   {
                     required: true,
@@ -801,7 +826,7 @@ function AllegationNature(props) {
                   },
                 ]}
               >
-                <Input disabled/>
+                <Input disabled className={'form-control'}/>
               </Form.Item>
             ]
           }
@@ -822,6 +847,7 @@ function AllegationNature(props) {
                   </Tooltip>
                 </span>
               }
+              className={'pwc-forms__field pwc-forms__field--select form-group'}
               rules={[
                 {
                   required: true,
@@ -829,9 +855,9 @@ function AllegationNature(props) {
                 },
               ]}
             >
-              <Select disabled onChange={e => setOtherPaymentFraud(e)}>
+              <Select disabled onChange={e => setOtherPaymentFraud(e)} className={'select-form-control'}>
                 {paymentFrauds.map(item => <Select.Option key={item.key}
-                                                           value={item.key}>{item.value}</Select.Option>)}
+                                                          value={item.key}>{item.value}</Select.Option>)}
               </Select>
             </Form.Item>
           ];
@@ -845,6 +871,7 @@ function AllegationNature(props) {
                 name="otherPaymentFraud"
                 key="otherPaymentFraud"
                 label={'Other'}
+                className={'pwc-forms__field pwc-forms__field--text form-group'}
                 rules={[
                   {
                     required: true,
@@ -852,7 +879,7 @@ function AllegationNature(props) {
                   },
                 ]}
               >
-                <Input disabled/>
+                <Input disabled className={'form-control'}/>
               </Form.Item>
             ]
           }
@@ -873,6 +900,7 @@ function AllegationNature(props) {
                   </Tooltip>
                 </span>
               }
+              className={'pwc-forms__field pwc-forms__field--select form-group'}
               rules={[
                 {
                   required: true,
@@ -880,9 +908,9 @@ function AllegationNature(props) {
                 },
               ]}
             >
-              <Select disabled onChange={e => setOtherPublicSectorFraud(e)}>
+              <Select disabled onChange={e => setOtherPublicSectorFraud(e)} className={'select-form-control'}>
                 {publicSectorFrauds.map(item => <Select.Option key={item.key}
-                                                          value={item.key}>{item.value}</Select.Option>)}
+                                                               value={item.key}>{item.value}</Select.Option>)}
               </Select>
             </Form.Item>
           ];
@@ -896,6 +924,7 @@ function AllegationNature(props) {
                 name="otherPublicSectorFraud"
                 key="otherPublicSectorFraud"
                 label={'Other'}
+                className={'pwc-forms__field pwc-forms__field--text form-group'}
                 rules={[
                   {
                     required: true,
@@ -903,7 +932,7 @@ function AllegationNature(props) {
                   },
                 ]}
               >
-                <Input disabled/>
+                <Input disabled className={'form-control'}/>
               </Form.Item>
             ]
           }
@@ -927,6 +956,7 @@ function AllegationNature(props) {
                   </Tooltip>
                 </span>
             }
+            className={'pwc-forms__field pwc-forms__field--select form-group'}
             rules={[
               {
                 required: true,
@@ -934,7 +964,7 @@ function AllegationNature(props) {
               },
             ]}
           >
-            <Select disabled>
+            <Select disabled className={'select-form-control'}>
               {misconductAllegations.map(item => <Select.Option key={item.key}
                                                                 value={item.key}>{item.value}</Select.Option>)}
             </Select>
@@ -949,6 +979,7 @@ function AllegationNature(props) {
               key="healthSafety"
               name="healthSafety"
               label={'Health & Safety'}
+              className={'pwc-forms__field pwc-forms__field--select form-group'}
               rules={[
                 {
                   required: true,
@@ -956,7 +987,7 @@ function AllegationNature(props) {
                 },
               ]}
             >
-              <Select disabled>
+              <Select disabled className={'select-form-control'}>
                 {healthSafeties.map(item => <Select.Option key={item.key}
                                                            value={item.key}>{item.value}</Select.Option>)}
               </Select>
@@ -974,6 +1005,7 @@ function AllegationNature(props) {
           key="allegationDescription"
           name="allegationDescription"
           label={'In your own words, please describe the allegation'}
+          className={'pwc-forms__field pwc-forms__field--textarea form-group'}
           rules={[
             {
               required: true,
@@ -981,26 +1013,52 @@ function AllegationNature(props) {
             },
           ]}
         >
-          <Input.TextArea disabled/>
+          <Input.TextArea disabled className={'form-control form-control--textarea-wrapper'}/>
         </Form.Item>,
-        <Form.Item
-          {...formItemLayout}
-          labelAlign={"left"}
-          key="departments"
-          name="departments"
-          label={'The department(s) involved is(are)'}
-          rules={[
-            {
-              required: true,
-              message: 'This field is required',
-            },
-          ]}
-        >
-          <Select disabled mode={"multiple"} onChange={e => setOtherDepartment(e)}>
+        <fieldset className={'pwc-forms__field pwc-forms__field--multi-check multiselect departments'}>
+          <legend>
+            The department(s) involved is(are)
+          </legend>
+          <Form.Item
+            {...formItemLayout}
+            labelAlign={"left"}
+            key="departments"
+            name="departments"
+            label={'The department(s) involved is(are)'}
+            className={'pwc-forms__field pwc-forms__field--select form-group departments'}
+            rules={[
+              {
+                required: true,
+                message: 'This field is required',
+              },
+            ]}
+          >
+            <Checkbox.Group disabled onChange={(e) => {
+              setOtherDepartment(e);
+              const container = document.querySelector('.pwc-forms fieldset.departments');
+              if (e.length > 0) {
+                container.classList.remove('has-error');
+                container.classList.add('has-success');
+              } else {
+                container.classList.add('has-error');
+                container.classList.remove('has-success');
+              }
+            }}>
+              {departments.map(item => (
+                <Row key={item.key}>
+                  <Col xs={24} md={24}>
+                    <Checkbox
+                      value={item.key}>{item.value}</Checkbox>
+                  </Col>
+                </Row>
+              ))}
+            </Checkbox.Group>
+            {/*<Select disabled mode={"multiple"} onChange={e => setOtherDepartment(e)} className={'select-form-control'}>
             {departments.map(item => <Select.Option key={item.key}
                                                     value={item.key}>{item.value}</Select.Option>)}
-          </Select>
-        </Form.Item>,
+          </Select>*/}
+          </Form.Item>
+        </fieldset>,
         <>
           {otherDepartment.includes(departmentEnums.OTHER) ? (
             <Form.Item
@@ -1009,6 +1067,7 @@ function AllegationNature(props) {
               key="otherDepartment"
               name="otherDepartment"
               label={'Other'}
+              className={'pwc-forms__field pwc-forms__field--text form-group'}
               rules={[
                 {
                   required: true,
@@ -1016,34 +1075,55 @@ function AllegationNature(props) {
                 },
               ]}
             >
-              <Input disabled/>
+              <Input disabled className={'form-control'}/>
             </Form.Item>
           ) : null}
-          </>,
-        <Form.Item
-          {...formItemLayout}
-          labelAlign={"left"}
-          key="jobTitle"
-          name="jobTitle"
-          label={'The person involved is(are)'}
-          rules={[
-            {
-              required: true,
-              message: 'This field is required',
-            },
-          ]}
-        >
-          <Select disabled mode={"multiple"}>
-            {jobTitles.map(item => <Select.Option key={item.key}
-                                                  value={item.key}>{item.value}</Select.Option>)}
-          </Select>
-        </Form.Item>,
+        </>,
+        <fieldset className={'pwc-forms__field pwc-forms__field--multi-check multiselect jobtitle'}>
+          <legend>
+            The person involved is(are)
+          </legend>
+          <Form.Item
+            {...formItemLayout}
+            labelAlign={"left"}
+            key="jobTitle"
+            name="jobTitle"
+            /*label={'The person involved is(are)'}*/
+            rules={[
+              {
+                required: true,
+                message: 'This field is required',
+              },
+            ]}
+          >
+            <Checkbox.Group disabled onChange={(e) => {
+              const container = document.querySelector('.pwc-forms fieldset.jobtitle');
+              if (e.length > 0) {
+                container.classList.remove('has-error');
+                container.classList.add('has-success');
+              } else {
+                container.classList.add('has-error');
+                container.classList.remove('has-success');
+              }
+            }}>
+              {jobTitles.map(item => (
+                <Row key={item.key}>
+                  <Col xs={24} md={24}>
+                    <Checkbox
+                      value={item.key}>{item.value}</Checkbox>
+                  </Col>
+                </Row>
+              ))}
+            </Checkbox.Group>
+          </Form.Item>
+        </fieldset>,,
         <Form.Item
           {...formItemLayout}
           labelAlign={"left"}
           key="employeeName"
           name="employeeName"
           label={'The name(s) is (are)'}
+          className={'pwc-forms__field pwc-forms__field--textarea form-group'}
           rules={[
             {
               required: true,
@@ -1051,7 +1131,7 @@ function AllegationNature(props) {
             },
           ]}
         >
-          <Input.TextArea disabled/>
+          <Input.TextArea disabled className={'form-control form-control--textarea-wrapper'}/>
         </Form.Item>,
         <Form.Item
           {...formItemLayout}
@@ -1059,6 +1139,7 @@ function AllegationNature(props) {
           key="awareReason"
           name="awareReason"
           label={'How you became aware of the misconduct'}
+          className={'pwc-forms__field pwc-forms__field--select form-group'}
           rules={[
             {
               required: true,
@@ -1066,35 +1147,18 @@ function AllegationNature(props) {
             },
           ]}
         >
-          <Select disabled>
+          <Select disabled className={'select-form-control'}>
             {awareReason.map(item => <Select.Option key={item.key}
                                                     value={item.key}>{item.value}</Select.Option>)}
           </Select>
         </Form.Item>,
-        /*<Form.Item
-          {...formItemLayout}
-          labelAlign={"left"}
-          key="certainty"
-          name="certainty"
-          label={'I would classify the certainty of the misconduct act'}
-          rules={[
-            {
-              required: true,
-              message: 'This field is required',
-            },
-          ]}
-        >
-          <Select disabled>
-            {certainties.map(item => <Select.Option key={item.key}
-                                                    value={item.key}>{item.value}</Select.Option>)}
-          </Select>
-        </Form.Item>,*/
         <Form.Item
           {...formItemLayout}
           labelAlign={"left"}
           key="severity"
           name="severity"
           label={'How severe is the allegation'}
+          className={'pwc-forms__field pwc-forms__field--select form-group'}
           rules={[
             {
               required: true,
@@ -1102,7 +1166,7 @@ function AllegationNature(props) {
             },
           ]}
         >
-          <Select disabled>
+          <Select disabled className={'select-form-control'}>
             {severities.map(item => <Select.Option key={item.key}
                                                    value={item.key}>{item.value}</Select.Option>)}
           </Select>
@@ -1113,6 +1177,7 @@ function AllegationNature(props) {
           key="impact"
           name="impact"
           label={'What is the monetary impact (in USD)'}
+          className={'pwc-forms__field pwc-forms__field--select form-group'}
           rules={[
             {
               required: true,
@@ -1120,7 +1185,7 @@ function AllegationNature(props) {
             },
           ]}
         >
-          <Select disabled>
+          <Select disabled className={'select-form-control'}>
             {impacts.map(item => <Select.Option key={item.key}
                                                 value={item.key}>{item.value}</Select.Option>)}
           </Select>

@@ -13,7 +13,7 @@ function Home() {
   return (
     <>
       <section id="title"
-               className="no-background__mobile page-section page-section--col-primary page-section--col-dark nomove fullwidth   videobghost "
+               className="no-background__mobile page-section page-section--col-primary page-section--col-dark nomove fullwidth videobghost "
                style={{backgroundSize: 'cover', backgroundPosition: 'center top', backgroundImage: `url(${BackgroundImage1})`}}>
 
 

@@ -4,10 +4,9 @@ import './report-allegation.css';
 import entities from '../../../../enums/Entities';
 import booleans, {enums as booleanEnums} from '../../../../enums/Boolean';
 import allegationNatures, {enums as allegationNatureEnums} from '../../../../enums/AllegationNature';
-import {enums as jobPositionEnum} from '../../../../enums/JobPosition';
+import jobPositions, {enums as jobPositionEnum} from '../../../../enums/JobPosition';
 import allegationOccurrences from '../../../../enums/AllegationOccurrence';
 import countries from '../../../../enums/Country';
-import jobPositions from '../../../../enums/JobPosition';
 import AllegationNature from "./allegation-nature/allegation-nature";
 import {getSingleAllegation} from "../../../../axios/allegations";
 import Actions from "./actions";
@@ -39,7 +38,7 @@ function ReportAllegation(props) {
           }
         })
     }
-    if(props.allegationData) {
+    if (props.allegationData) {
       setFormData(props.allegationData);
       setIsLoading(false);
       form.setFieldsValue(generateFormValues(props.allegationData))
@@ -66,19 +65,19 @@ function ReportAllegation(props) {
     if (data.allegationNature) {
       allegationNatureChange(parseInt(data.allegationNature))
     }
-    if(parseInt(data.radioAdditionalInformation) === booleanEnums.YES) {
+    if (parseInt(data.radioAdditionalInformation) === booleanEnums.YES) {
       setShowAdditionalInformation(true);
     }
-    if(parseInt(data.radioAlreadySubmitted) === booleanEnums.YES) {
+    if (parseInt(data.radioAlreadySubmitted) === booleanEnums.YES) {
       setShowAlreadyReported(true);
     }
-    if(parseInt(data.radioContactInformation) === booleanEnums.YES) {
+    if (parseInt(data.radioContactInformation) === booleanEnums.YES) {
       setShowContactInfo(true);
     }
-    if(parseInt(data.radioEvidence) === booleanEnums.YES) {
+    if (parseInt(data.radioEvidence) === booleanEnums.YES) {
       setShowEvidence(true);
     }
-    if(parseInt(data.jobPosition) === jobPositionEnum.OTHER) {
+    if (parseInt(data.jobPosition) === jobPositionEnum.OTHER) {
       setOtherRoleInput(true);
     }
     return data;
@@ -115,7 +114,8 @@ function ReportAllegation(props) {
   };
 
   return (
-    <div>
+
+    <div className="container pwc-forms">
       <Spin tip="Loading..." spinning={isLoading}>
         <Form
           initialValues={formData}
@@ -128,6 +128,8 @@ function ReportAllegation(props) {
             name="entity"
             labelAlign={"left"}
             label={'Name of organisation'}
+            className={'pwc-forms__field pwc-forms__field--select form-group'}
+            validateStatus={'123'}
             rules={[
               {
                 required: true,
@@ -135,7 +137,7 @@ function ReportAllegation(props) {
               },
             ]}
           >
-            <Select disabled>
+            <Select disabled className={'select-form-control'}>
               {entities.map(item => <Select.Option key={item.key} value={item.key}>{item.value}</Select.Option>)}
             </Select>
           </Form.Item>
@@ -144,6 +146,8 @@ function ReportAllegation(props) {
             labelAlign={"left"}
             name="country"
             label={'Location of allegation'}
+            validateStatus={'123'}
+            className={'pwc-forms__field pwc-forms__field--select form-group'}
             rules={[
               {
                 required: true,
@@ -151,7 +155,7 @@ function ReportAllegation(props) {
               },
             ]}
           >
-            <Select disabled>
+            <Select disabled className={'select-form-control'}>
               {countries.map(item => <Select.Option key={item.key} value={item.key}>{item.value}</Select.Option>)}
             </Select>
           </Form.Item>
@@ -160,6 +164,8 @@ function ReportAllegation(props) {
             labelAlign={"left"}
             name="jobPosition"
             label={'Your role'}
+            className={'pwc-forms__field pwc-forms__field--select form-group'}
+            validateStatus={'123'}
             rules={[
               {
                 required: true,
@@ -167,8 +173,9 @@ function ReportAllegation(props) {
               },
             ]}
           >
-            <Select disabled>
-              {jobPositions.map(item => <Select.Option key={item.key} value={item.key}>{item.value}</Select.Option>)}
+            <Select disabled className={'select-form-control'}>
+              {jobPositions.map(item => <Select.Option key={item.key}
+                                                       value={item.key}>{item.value}</Select.Option>)}
             </Select>
           </Form.Item>
           {showOtherRoleInput ? (
@@ -177,7 +184,7 @@ function ReportAllegation(props) {
               labelAlign={"left"}
               name="otherJobPosition"
               label={'Other'}
-              hasFeedback
+              className={'pwc-forms__field pwc-forms__field--text form-group'}
               rules={[
                 {
                   required: true,
@@ -185,7 +192,7 @@ function ReportAllegation(props) {
                 },
               ]}
             >
-              <Input disabled />
+              <Input disabled className={'form-control'}/>
             </Form.Item>
           ) : null}
           <Form.Item
@@ -193,6 +200,8 @@ function ReportAllegation(props) {
             labelAlign={"left"}
             name="allegationNature"
             label={'Type of allegation'}
+            validateStatus={'123'}
+            className={'pwc-forms__field pwc-forms__field--select form-group'}
             rules={[
               {
                 required: true,
@@ -200,7 +209,7 @@ function ReportAllegation(props) {
               },
             ]}
           >
-            <Select disabled onChange={allegationNatureChange}>
+            <Select disabled onChange={allegationNatureChange} className={'select-form-control'}>
               {allegationNatures.map(item => <Select.Option key={item.key}
                                                             value={item.key}>{item.value}</Select.Option>)}
             </Select>
@@ -260,6 +269,7 @@ function ReportAllegation(props) {
             labelAlign={"left"}
             name="previousReportText"
             label={'Provide more details when, to who and how the allegation was reported internally'}
+            className={'pwc-forms__field pwc-forms__field--textarea form-group'}
             rules={[
               {
                 required: true,
@@ -267,7 +277,7 @@ function ReportAllegation(props) {
               },
             ]}
           >
-            <Input.TextArea disabled/>
+            <Input.TextArea disabled className={'form-control form-control--textarea-wrapper'}/>
           </Form.Item> : null}
           <Form.Item
             {...formItemLayout}
@@ -291,6 +301,7 @@ function ReportAllegation(props) {
             labelAlign={"left"}
             name="additionalInformationText"
             label={'Use the space below to share additional information such as what evidence (document or email report) and share any suggestions on how this can be prevented'}
+            className={'pwc-forms__field pwc-forms__field--textarea form-group'}
             rules={[
               {
                 required: true,
@@ -298,7 +309,7 @@ function ReportAllegation(props) {
               },
             ]}
           >
-            <Input.TextArea disabled/>
+            <Input.TextArea disabled className={'form-control form-control--textarea-wrapper'}/>
           </Form.Item> : null}
           <Form.Item
             {...formItemLayout}
@@ -331,7 +342,8 @@ function ReportAllegation(props) {
               },
             ]}
           >
-            <Radio.Group disabled onChange={(e) => setShowContactInfo(parseInt(e.target.value) === booleanEnums.YES)}>
+            <Radio.Group disabled
+                         onChange={(e) => setShowContactInfo(parseInt(e.target.value) === booleanEnums.YES)}>
               {booleans.map(item => <Radio key={item.key} value={item.key}>{item.value}</Radio>)}
             </Radio.Group>
           </Form.Item>
@@ -341,6 +353,7 @@ function ReportAllegation(props) {
               labelAlign={"left"}
               name="mobileNumber"
               label={'Mobile Number'}
+              className={'pwc-forms__field pwc-forms__field--text form-group'}
               rules={[
                 {
                   required: true,
@@ -348,13 +361,14 @@ function ReportAllegation(props) {
                 },
               ]}
             >
-              <Input disabled/>
+              <Input disabled className={'form-control'}/>
             </Form.Item>
             <Form.Item
               {...formItemLayout}
               labelAlign={"left"}
               name="email"
               label={'Email'}
+              className={'pwc-forms__field pwc-forms__field--text form-group'}
               rules={[
                 {
                   required: true,
@@ -366,11 +380,12 @@ function ReportAllegation(props) {
                 },
               ]}
             >
-              <Input type={'email'} disabled/>
+              <Input type={'email'} disabled className={'form-control'}/>
             </Form.Item>
           </> : null}
         </Form>
-        {props.allegationId ? <Actions allegationId={props.allegationId} setShowAllegation={props.setShowAllegation}/> : null}
+        {props.allegationId ?
+          <Actions allegationId={props.allegationId} setShowAllegation={props.setShowAllegation}/> : null}
       </Spin>
     </div>
   )

@@ -119,7 +119,7 @@ function AllegationNature(props) {
 								name="otherAssetMisappropriation"
 								key="otherAssetMisappropriation"
 								label={'Other'}
-								hasFeedback
+								className={'pwc-forms__field pwc-forms__field--text form-group'}
 								rules={[
 									{
 										required: true,
@@ -127,7 +127,7 @@ function AllegationNature(props) {
 									},
 								]}
 							>
-								<Input/>
+								<Input className={'form-control'}/>
 							</Form.Item>
 						]
 					}
@@ -172,7 +172,7 @@ function AllegationNature(props) {
 								name="otherBribery"
 								key="otherBribery"
 								label={'Other'}
-								hasFeedback
+								className={'pwc-forms__field pwc-forms__field--text form-group'}
 								rules={[
 									{
 										required: true,
@@ -180,7 +180,7 @@ function AllegationNature(props) {
 									},
 								]}
 							>
-								<Input/>
+								<Input className={'form-control'}/>
 							</Form.Item>
 						]
 					}
@@ -225,7 +225,7 @@ function AllegationNature(props) {
 								name="otherBankruptcyFraud"
 								key="otherBankruptcyFraud"
 								label={'Other'}
-								hasFeedback
+								className={'pwc-forms__field pwc-forms__field--text form-group'}
 								rules={[
 									{
 										required: true,
@@ -233,7 +233,7 @@ function AllegationNature(props) {
 									},
 								]}
 							>
-								<Input/>
+								<Input className={'form-control'}/>
 							</Form.Item>
 						]
 					}
@@ -278,7 +278,7 @@ function AllegationNature(props) {
 								name="otherCheckCreditCardFraud"
 								key="otherCheckCreditCardFraud"
 								label={'Other'}
-								hasFeedback
+								className={'pwc-forms__field pwc-forms__field--text form-group'}
 								rules={[
 									{
 										required: true,
@@ -286,7 +286,7 @@ function AllegationNature(props) {
 									},
 								]}
 							>
-								<Input/>
+								<Input className={'form-control'}/>
 							</Form.Item>
 						]
 					}
@@ -332,7 +332,7 @@ function AllegationNature(props) {
 								name="otherComputerInternetFraud"
 								key="otherComputerInternetFraud"
 								label={'Other'}
-								hasFeedback
+								className={'pwc-forms__field pwc-forms__field--text form-group'}
 								rules={[
 									{
 										required: true,
@@ -340,7 +340,7 @@ function AllegationNature(props) {
 									},
 								]}
 							>
-								<Input/>
+								<Input className={'form-control'}/>
 							</Form.Item>
 						]
 					}
@@ -385,7 +385,7 @@ function AllegationNature(props) {
 								name="otherContractProcurementFraud"
 								key="otherContractProcurementFraud"
 								label={'Other'}
-								hasFeedback
+								className={'pwc-forms__field pwc-forms__field--text form-group'}
 								rules={[
 									{
 										required: true,
@@ -393,7 +393,7 @@ function AllegationNature(props) {
 									},
 								]}
 							>
-								<Input/>
+								<Input className={'form-control'}/>
 							</Form.Item>
 						]
 					}
@@ -438,7 +438,7 @@ function AllegationNature(props) {
 								name="otherFinancialInstitutionFraud"
 								key="otherFinancialInstitutionFraud"
 								label={'Other'}
-								hasFeedback
+								className={'pwc-forms__field pwc-forms__field--text form-group'}
 								rules={[
 									{
 										required: true,
@@ -446,7 +446,7 @@ function AllegationNature(props) {
 									},
 								]}
 							>
-								<Input/>
+								<Input className={'form-control'}/>
 							</Form.Item>
 						]
 					}
@@ -491,7 +491,7 @@ function AllegationNature(props) {
 								name="otherHealthcareFraud"
 								key="otherHealthcareFraud"
 								label={'Other'}
-								hasFeedback
+								className={'pwc-forms__field pwc-forms__field--text form-group'}
 								rules={[
 									{
 										required: true,
@@ -499,7 +499,7 @@ function AllegationNature(props) {
 									},
 								]}
 							>
-								<Input/>
+								<Input className={'form-control'}/>
 							</Form.Item>
 						]
 					}
@@ -544,7 +544,7 @@ function AllegationNature(props) {
 								name="otherHrFraud"
 								key="otherHrFraud"
 								label={'Other'}
-								hasFeedback
+								className={'pwc-forms__field pwc-forms__field--text form-group'}
 								rules={[
 									{
 										required: true,
@@ -552,7 +552,7 @@ function AllegationNature(props) {
 									},
 								]}
 							>
-								<Input/>
+								<Input className={'form-control'}/>
 							</Form.Item>
 						]
 					}
@@ -597,7 +597,7 @@ function AllegationNature(props) {
 								name="otherIntellectualPropertyFraud"
 								key="otherIntellectualPropertyFraud"
 								label={'Other'}
-								hasFeedback
+								className={'pwc-forms__field pwc-forms__field--text form-group'}
 								rules={[
 									{
 										required: true,
@@ -605,7 +605,7 @@ function AllegationNature(props) {
 									},
 								]}
 							>
-								<Input/>
+								<Input className={'form-control'}/>
 							</Form.Item>
 						]
 					}
@@ -650,7 +650,7 @@ function AllegationNature(props) {
 								name="otherInsuranceFraud"
 								key="otherInsuranceFraud"
 								label={'Other'}
-								hasFeedback
+								className={'pwc-forms__field pwc-forms__field--text form-group'}
 								rules={[
 									{
 										required: true,
@@ -658,7 +658,7 @@ function AllegationNature(props) {
 									},
 								]}
 							>
-								<Input/>
+								<Input className={'form-control'}/>
 							</Form.Item>
 						]
 					}
@@ -703,7 +703,7 @@ function AllegationNature(props) {
 								name="otherTaxFraud"
 								key="otherTaxFraud"
 								label={'Other'}
-								hasFeedback
+								className={'pwc-forms__field pwc-forms__field--text form-group'}
 								rules={[
 									{
 										required: true,
@@ -711,7 +711,7 @@ function AllegationNature(props) {
 									},
 								]}
 							>
-								<Input/>
+								<Input className={'form-control'}/>
 							</Form.Item>
 						]
 					}
@@ -756,7 +756,7 @@ function AllegationNature(props) {
 								name="otherSecurityFraud"
 								key="otherSecurityFraud"
 								label={'Other'}
-								hasFeedback
+								className={'pwc-forms__field pwc-forms__field--text form-group'}
 								rules={[
 									{
 										required: true,
@@ -764,7 +764,7 @@ function AllegationNature(props) {
 									},
 								]}
 							>
-								<Input/>
+								<Input className={'form-control'}/>
 							</Form.Item>
 						]
 					}
@@ -809,7 +809,7 @@ function AllegationNature(props) {
 								name="otherPaymentFraud"
 								key="otherPaymentFraud"
 								label={'Other'}
-								hasFeedback
+								className={'pwc-forms__field pwc-forms__field--text form-group'}
 								rules={[
 									{
 										required: true,
@@ -817,7 +817,7 @@ function AllegationNature(props) {
 									},
 								]}
 							>
-								<Input/>
+								<Input className={'form-control'}/>
 							</Form.Item>
 						]
 					}
@@ -862,7 +862,7 @@ function AllegationNature(props) {
 								name="otherPublicSectorFraud"
 								key="otherPublicSectorFraud"
 								label={'Other'}
-								hasFeedback
+								className={'pwc-forms__field pwc-forms__field--text form-group'}
 								rules={[
 									{
 										required: true,
@@ -870,7 +870,7 @@ function AllegationNature(props) {
 									},
 								]}
 							>
-								<Input/>
+								<Input className={'form-control'}/>
 							</Form.Item>
 						]
 					}
@@ -1000,7 +1000,7 @@ function AllegationNature(props) {
 							key="otherDepartment"
 							name="otherDepartment"
 							label={'Other'}
-							hasFeedback
+							className={'pwc-forms__field pwc-forms__field--text form-group'}
 							rules={[
 								{
 									required: true,
@@ -1008,7 +1008,7 @@ function AllegationNature(props) {
 								},
 							]}
 						>
-							<Input/>
+							<Input className={'form-control'}/>
 						</Form.Item>
 					) : null}
 				</>,

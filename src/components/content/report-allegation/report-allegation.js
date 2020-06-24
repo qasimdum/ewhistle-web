@@ -285,7 +285,7 @@ function ReportAllegation() {
               labelAlign={"left"}
               name="previousReportText"
               label={'Provide more details when, to who and how the allegation was reported internally'}
-              hasFeedback
+              className={'pwc-forms__field pwc-forms__field--textarea form-group'}
               rules={[
                 {
                   required: true,
@@ -293,7 +293,7 @@ function ReportAllegation() {
                 },
               ]}
             >
-              <Input.TextArea/>
+              <Input.TextArea className={'form-control form-control--textarea-wrapper'}/>
             </Form.Item> : null}
             <Form.Item
               {...formItemLayout}
@@ -318,7 +318,7 @@ function ReportAllegation() {
               labelAlign={"left"}
               name="additionalInformationText"
               label={'Use the space below to share additional information such as what evidence (document or email report) and share any suggestions on how this can be prevented'}
-              hasFeedback
+              className={'pwc-forms__field pwc-forms__field--textarea form-group'}
               rules={[
                 {
                   required: true,
@@ -326,7 +326,7 @@ function ReportAllegation() {
                 },
               ]}
             >
-              <Input.TextArea/>
+              <Input.TextArea className={'form-control form-control--textarea-wrapper'}/>
             </Form.Item> : null}
             <Form.Item
               {...formItemLayout}
@@ -400,7 +400,7 @@ function ReportAllegation() {
                 labelAlign={"left"}
                 name="mobileNumber"
                 label={'Mobile Number'}
-                hasFeedback
+                className={'pwc-forms__field pwc-forms__field--text form-group'}
                 rules={[
                   {
                     required: true,
@@ -408,14 +408,14 @@ function ReportAllegation() {
                   },
                 ]}
               >
-                <Input/>
+                <Input className={'form-control'}/>
               </Form.Item>
               <Form.Item
                 {...formItemLayout}
                 labelAlign={"left"}
                 name="email"
                 label={'Email'}
-                hasFeedback
+                className={'pwc-forms__field pwc-forms__field--text form-group'}
                 rules={[
                   {
                     required: true,
@@ -427,15 +427,13 @@ function ReportAllegation() {
                   },
                 ]}
               >
-                <Input type={'email'}/>
+                <Input type={'email'} className={'form-control'}/>
               </Form.Item>
             </> : null}
-
-
             <Form.Item>
-              <Button type="primary" htmlType="submit" className="login-form-button">
-                Submit
-              </Button>
+              <Form.Item>
+                <button type={'submit'} className={'btn btn--primary btn--transparent'}>Submit</button>
+              </Form.Item>
             </Form.Item>
           </Form>
         </div>
