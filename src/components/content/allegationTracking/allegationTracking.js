@@ -68,52 +68,23 @@ function AllegationTracking() {
                 <button type={'submit'} className={'btn btn--primary btn--transparent'}>Submit</button>
               </Form.Item>
             </Form>
+            {data ? (
+              <>
+                <h4>Allegation Status: <Tag color={tagColor}>{getSingleAllegationStatus(data.status)}</Tag></h4>
+                <Tabs defaultActiveKey="1" onChange={() => {
+                }}>
+                  <Tabs.TabPane tab="Chat" key="1">
+                    <Chat trackingId={trackingId}/>
+                  </Tabs.TabPane>
+                  <Tabs.TabPane tab="Allegation Info" key="2">
+                    <ReportAllegation allegationData={data}/>
+                  </Tabs.TabPane>
+                </Tabs>
+              </>
+            ) : null}
           </div>
         </div>
       </section>
-      <div className={'allegation-tracking'}>
-
-        {/*<Form onFinish={onSubmit}>
-        <Form.Item
-          {...formItemLayout}
-          name="trackingId"
-          labelAlign={"left"}
-          label={'Allegation Tracking Code'}
-          rules={[
-            {
-              required: true,
-              message: 'This field is required',
-            },
-          ]}
-        >
-          <Input/>
-        </Form.Item>
-        <Form.Item>
-          <Button htmlType={'submit'}>Submit</Button>
-        </Form.Item>
-      </Form>*/}
-
-        {data ? (
-          <>
-            <section className="page-section page-section--no-pad fullwidth section-col--white">
-              <div className="parsys sectionpar">
-                <div className={'container dpe-component-wrapper'}>
-                  <h4>Allegation Status: <Tag color={tagColor}>{getSingleAllegationStatus(data.status)}</Tag></h4>
-                  <Tabs defaultActiveKey="1" onChange={() => {
-                  }}>
-                    <Tabs.TabPane tab="Chat" key="1">
-                      <Chat trackingId={trackingId}/>
-                    </Tabs.TabPane>
-                    <Tabs.TabPane tab="Allegation Info" key="2">
-                      <ReportAllegation allegationData={data}/>
-                    </Tabs.TabPane>
-                  </Tabs>
-                </div>
-              </div>
-            </section>
-          </>
-        ) : null}
-      </div>
     </>
   )
 }

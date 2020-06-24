@@ -106,7 +106,7 @@ function HeaderPage() {
                                 <li><NavLink onClick={() => setSelectedMenu('/')} exact to={'/'}>Home</NavLink></li>
                                 <li><NavLink onClick={() => setSelectedMenu('/policy')}  exact to={'/policy'}>Whistleblower policy</NavLink></li>
                                 <li><NavLink onClick={() => setSelectedMenu('/report_allegation')}  exact to={'/report_allegation'}>Report an Allegation</NavLink></li>
-                                <li><NavLink onClick={() => setSelectedMenu('/allegation_tracking')}  exact to={'/allegation_tracking'}>Allegation status</NavLink>></li>
+                                <li><NavLink onClick={() => setSelectedMenu('/allegation_tracking')}  exact to={'/allegation_tracking'}>Allegation status</NavLink></li>
                                 <li><NavLink onClick={() => setSelectedMenu('/signin')}  exact to={'/signin'}>Admin Login</NavLink></li>
                               </ul>
                             </div>

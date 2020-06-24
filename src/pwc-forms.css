@@ -545,7 +545,7 @@
 .ant-checkbox-checked .ant-checkbox-inner::after {
   position: absolute;
   display: table;
-  margin-left: 2px;
+  margin-left: 1px;
   border: 1px solid #fff;
   border-top: 0;
   border-left: 0;
@@ -580,4 +580,13 @@
 }
 .ant-checkbox-inner {
   border-radius: 0;
+}
+.ant-radio-disabled .ant-radio-inner {
+  background-color: transparent;
+}
+.ant-radio-checked .ant-radio-inner::after {
+  background-color: white!important;
+}
+.ant-checkbox-disabled .ant-checkbox-inner::after {
+  border-color: white!important;
 }

@@ -64,7 +64,7 @@ function AllegationNature(props) {
 					key="fraudulentAllegationNature"
 					name="fraudulentAllegationNature"
 					label={'What is the category of the fraudulent allegation'}
-					hasFeedback
+					className={'pwc-forms__field pwc-forms__field--select form-group'}
 					rules={[
 						{
 							required: true,

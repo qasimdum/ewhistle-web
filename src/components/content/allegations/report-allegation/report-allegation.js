@@ -115,7 +115,7 @@ function ReportAllegation(props) {
 
   return (
 
-    <div className="container pwc-forms">
+    <div className="">
       <Spin tip="Loading..." spinning={isLoading}>
         <Form
           initialValues={formData}
@@ -331,7 +331,9 @@ function ReportAllegation(props) {
             </Radio.Group>
           </Form.Item>
           {showEvidence ?
-            <a href={formData.fileUrl}>{formData.fileName}</a>
+            <Form.Item>
+              <a className={'lg-text-link'}  href={formData.fileUrl}>{formData.fileName}</a>
+            </Form.Item>
             : null}
           <Form.Item
             {...formItemLayout}
