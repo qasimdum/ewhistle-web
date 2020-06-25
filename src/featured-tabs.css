@@ -31,7 +31,7 @@
     .secnav-tabs .secnav-tabs__heading.stats-heading {
       padding-bottom: 30px; }
   .secnav-tabs.secnav-tabs--with-icons .secnav-tabs__navigation .secnav-tabs__tab {
-    padding-top: 115px;
+    /*padding-top: 115px;*/
     position: relative; }
     .secnav-tabs.secnav-tabs--with-icons .secnav-tabs__navigation .secnav-tabs__tab .secnav-tabs__tab-icon {
       display: block;
@@ -642,6 +642,10 @@
 @media (max-width: 767px) {
   .feat-tabs__wrapper .feat-tabs--66-33 .feat-tabs__column-1, .feat-tabs__wrapper .feat-tabs--66-33 .feat-tabs__column-2 {
     width: 100%; } }
+
+.secnav-tabs__content-container {
+  padding-top: 20px;
+}
 
 /*	end Secondary navigation (Tabs) 
 ********************/
