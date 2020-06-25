@@ -1,6 +1,5 @@
 import React from 'react';
 import './content.css';
-import {Layout} from "antd";
 import PublicRoutes from "../../routes/public_routes";
 import Header from "../header/header";
 

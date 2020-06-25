@@ -1,10 +1,41 @@
 import React from 'react';
 import './policy.css'
 import PolicyImage from '../../../assets/policy.png';
+import BackgroundImage2 from '../../../assets/header_2.png';
 
 function Policy() {
   return (
+    <>
+      <section className="no-background__mobile page-section page-section--col-primary page-section--col-dark nomove fullwidth videobghost "
+               style={{
+                 backgroundSize: 'cover',
+                 backgroundPosition: 'center top',
+                 backgroundImage: `url(${BackgroundImage2})`
+               }}>
+        <div className="parsys sectionpar">
+          <div className="herotitle section">
+            <div className="dpe-component-wrapper hero-title-component hero-title-component--lg-h1">
+              <div className="hero-title hero-title-textpanel--compaign">
+                <div className="container">
+                  <div className="row hero-title-row--compaign">
+                    <div className="textColumn col-sm-8">
+                      <div className="hero-title-textpanel">
+                        <h1><a href={'/report_allegation'} className="compaign-hlight__inner">Report Allegation</a></h1>
+                        {/*<p className="sub-heading"><span className="compaign-hlight__inner">Your electronic Whistleblowing platform</span></p>*/}
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
     <div className={'policy'}>
+      <div className="dpe-component-wrapper secnav-tabs  secnav-tabs--with-icons  secnav-tabs--with-heading ">
+        <div className="container">
+          <div className="row">
+            <div className="col-xs-12">
       <img src={PolicyImage} alt={'Policy'} />
       <p>A whistleblower as defined by this policy is an employee of (Name of Company/Organization) who reports an
         activity that he/she considers to be illegal or dishonest to one or more of the parties specified in this
@@ -51,7 +82,9 @@ function Policy() {
       </p>
       <p>Employees with any questions regarding this policy should contact the Director of Human Resources.</p>
       {/*<Quotes/>*/}
+            </div></div></div></div>
     </div>
+      </>
   )
 }
 

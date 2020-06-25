@@ -14,49 +14,29 @@ function Home() {
 
   return (
     <>
-      <section id="title"
-               className="no-background__mobile page-section page-section--col-primary page-section--col-dark nomove fullwidth videobghost "
+      <section className="no-background__mobile page-section page-section--col-primary page-section--col-dark nomove fullwidth videobghost "
                style={{
                  backgroundSize: 'cover',
                  backgroundPosition: 'center top',
                  backgroundImage: `url(${BackgroundImage1})`
                }}>
-
-
         <div className="parsys sectionpar">
           <div className="herotitle section">
-
-
             <div className="dpe-component-wrapper hero-title-component hero-title-component--lg-h1">
               <div className="hero-title hero-title-textpanel--compaign">
                 <div className="container">
                   <div className="row hero-title-row--compaign">
                     <div className="textColumn col-sm-8">
                       <div className="hero-title-textpanel">
-                        <h1>
-                                <span className="compaign-hlight__inner">
-                                    Report Allegation
-                                </span>
-                        </h1>
-                        <p className="sub-heading">
-                                <span className="compaign-hlight__inner">
-                                    Your electronic Whistleblowing platform
-                                </span>
-                        </p>
-
-
+                        <h1><a href={'/report_allegation'} className="compaign-hlight__inner">Report Allegation</a></h1>
+                        <p className="sub-heading"><span className="compaign-hlight__inner">Your electronic Whistleblowing platform</span></p>
                       </div>
                     </div>
                   </div>
                 </div>
               </div>
-
             </div>
-
-
           </div>
-
-
         </div>
       </section>
       <div className={'home'}>

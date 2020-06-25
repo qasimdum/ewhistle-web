@@ -7,6 +7,7 @@ import {useHistory} from 'react-router-dom';
 import './base.css';
 import './pwc-forms.css';
 import './featured-tabs.css';
+import './web-fonts.css';
 
 
 const {Footer} = Layout;

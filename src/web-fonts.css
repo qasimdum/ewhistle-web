@@ -1,0 +1,38 @@
+@import url("http://fast.fonts.net/t/1.css?apiType=css&projectid=56cdf5df-59df-4f06-a37e-e6e2a4dd5fa5");
+@import url("http://fast.fonts.net/t/1.css?apiType=css&projectid=b8e78f6a-50fe-4e2a-984a-8bd1de7a2614");
+    
+@font-face {
+  font-family: 'PwC Charter ITC';
+  font-style: normal;
+  font-weight: 400;
+  src:  url('assets/fonts/6f7f55b5-d511-474f-9652-affbdac0a19e.woff2') format('woff2'),
+        url('assets/fonts/09d1f64e-8b0e-4a6f-8b1c-eafb48e881ef.woff') format('woff'),
+        url('assets/fonts/25b2f50c-1b1a-4239-8ddd-b0b7884e868c.ttf') format('ttf'),
+        url('assets/fonts/a3c5dc0a-ebc3-4e88-8362-81d55b3d9f2b.eot') format('eot');
+}
+@font-face {
+  font-family: 'PwC Helvetica Neue';
+  font-style: normal;
+  font-weight: 400;
+  src:  url('assets/fonts/08b57253-2e0d-4c12-9c57-107f6c67bc49.woff2') format('woff2'),
+        url('assets/fonts/08edde9d-c27b-4731-a27f-d6cd9b01cd06.woff') format('woff'),
+        url('assets/fonts/8f4a1705-214a-4dd0-80b8-72252c37e688.ttf') format('ttf'),
+        url('assets/fonts/522972a6-5867-47ae-82fc-a7cf9bd5d4d4.eot') format('eot');
+}
+@font-face {
+  font-family: 'PwC Helvetica Neue';
+  font-style: normal;
+  font-weight: bold;
+  src:  url('assets/fonts/800da3b0-675f-465f-892d-d76cecbdd5b1.woff2') format('woff2'),
+        url('assets/fonts/7b415a05-784a-4a4c-8c94-67e9288312f5.woff') format('woff'),
+        url('assets/fonts/f07c25ed-2d61-4e44-99ab-a0bc3ec67662.ttf') format('ttf'),
+        url('assets/fonts/4c21ab66-1566-4a85-b310-fbc649985f88.eot') format('eot');
+}
+@font-face {
+  font-family: 'PwC Helvetica Neue Light';
+  font-style: normal;
+  src:  url('assets/fonts/f9c5199e-a996-4c08-9042-1eb845bb7495.woff2') format('woff2'),
+        url('assets/fonts/2a34f1f8-d701-4949-b12d-133c1c2636eb.woff') format('woff'),
+        url('assets/fonts/fdf10d5e-4ce0-45e5-a6c1-5eaff6cb1c11.ttf') format('ttf'),
+        url('assets/fonts/cb0d1e8a-e111-4dbf-82c2-e948aba954c0.eot') format('eot');
+}

@@ -1,9 +1,5 @@
-import {Layout, Menu, Row, Col} from 'antd';
 import React from 'react';
 import './header.css';
-import BackgroundImage1 from '../../assets/header_1.jpg';
-import BackgroundImage2 from '../../assets/header_2.png';
-import LogoImage from '../../assets/logo.png';
 import {Link, NavLink, useHistory} from 'react-router-dom';
 
 import './global-slim-header.css';
@@ -79,7 +75,6 @@ function HeaderPage() {
                       <a className="glb-slim-header__subbrand" href="http://www.pwc.com/gx/en.html">Bosnia and
                         Herzegovina</a>
                     </div>
-
                     <div className=" glb-slim-header__nav-ctrls">
                       <button id="dropdownTrigger_lg" type="button"
                               className="global-nav-block navbar-toggle glb-slim-header__navbar-toggle glb-slim-header__navbar-toggle--has-label"
@@ -95,7 +90,6 @@ function HeaderPage() {
                   </div>
                 </div>
               </div>
-
               <div className="glb-slim-header-nav-wrapper">
                   <div className="dpe-component-wrapper glb-nav glb-nav--tabbed " id="globalNav">
                     <nav className="navbar ">
@@ -118,24 +112,20 @@ function HeaderPage() {
                   </div>
               </div>
               <div className="glb-slim-header__breadcrumb-wrapper glb-slim-header__breadcrumb-wrapper--mobiletoggle">
-
                 <div className="glb-slim-header__breadcrumb">
                   <div className="container">
                     <div className="row">
                       <nav id="slimHeaderBreadcrumbWrapper" className="col-xs-12 simple-breadcrumb-component ">
-
                         <button className="glb-slim-header__breadcrumb-reveal "
                                 data-toggle-breadcrumb-clip="true">
                           <span className="sr-only">Show full breadcrumb</span>
                           <span className="icon-el icon-el--reveal-bc">
-                                     <span className="icon-el__normal"></span>
-                                     <span className="icon-el__on"></span>
+                                     <span className="icon-el__normal" />
+                                     <span className="icon-el__on" />
                                    </span>
                         </button>
                         <div className="breadcrumb-component__scroll-pane">
-
                           <ul className="breadcrumb clearfix">
-
                             <li><Link to={'/'}>PwC Global</Link></li>
                             {selectedMenu !== '/' ? <li className="active"><Link to={selectedMenu}>{selectedMenuText}</Link></li> : null}
                           </ul>
@@ -153,16 +143,6 @@ function HeaderPage() {
             </div>
           </div>
       </section>
-      {history.location.pathname === '/policy' ? (
-        <div className={'landing-img-policy'}>
-          <img src={BackgroundImage2} alt={'background'} />
-          <div className={'text'}>
-
-            {/*<Tag color={"blue"} onClick={() => history.push('/report_allegation')}>Report Allegation</Tag>*/}
-            <button onClick={() => history.push('/report_allegation')}>Report Allegation</button>
-          </div>
-        </div>
-      ) : null}
     </>
   )
 }
