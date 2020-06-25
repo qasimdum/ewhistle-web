@@ -22,7 +22,6 @@ instance.interceptors.response.use(response => {
   return response.data;
 }, error => {
   if (error && error.response && error.response.status === 401) {
-
     localStorage.removeItem('idToken');
     window.location.href = '/';
   }

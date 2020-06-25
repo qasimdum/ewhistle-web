@@ -1,7 +1,7 @@
 import React from 'react';
 import './header.css';
 import {Link, NavLink, useHistory} from 'react-router-dom';
-
+import logo from '../../assets/logo.png';
 import './global-slim-header.css';
 import './global-nav.css';
 
@@ -69,7 +69,7 @@ function HeaderPage() {
                   <div className=" glb-slim-header__flexrow ">
                     <div className="  glb-slim-header__branding">
                       <a className="glb-slim-header__logo" href="http://www.pwc.com/gx/en.html">
-                        <img alt="PwC" src="assets/images/header/pwclogo.svg" className=" img-responsive" />
+                        <img alt="PwC" src={logo} className=" img-responsive" />
                       </a>
                       <span className="glb-slim-header__divider " role="separator"></span>
                       <a className="glb-slim-header__subbrand" href="http://www.pwc.com/gx/en.html">Bosnia and
@@ -80,9 +80,9 @@ function HeaderPage() {
                               className="global-nav-block navbar-toggle glb-slim-header__navbar-toggle glb-slim-header__navbar-toggle--has-label"
                               data-toggle-nav="true" onClick={toggleMobileMode}>
                         <div className="icon-bar-wrapper">
-                          <span className="icon-bar icon-bar1"></span>
-                          <span className="icon-bar icon-bar2"></span>
-                          <span className="icon-bar icon-bar3"></span>
+                          <span className="icon-bar icon-bar1"/>
+                          <span className="icon-bar icon-bar2"/>
+                          <span className="icon-bar icon-bar3"/>
                         </div>
                         <span className="text">Menu</span>
                       </button>

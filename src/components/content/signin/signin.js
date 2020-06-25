@@ -12,7 +12,7 @@ function SignIn() {
   const history = useHistory();
   useEffect(() => {
     if(localStorage.getItem('idToken')) {
-      history.push('./allegations')
+      window.location.href = '/allegations';
     }
   }, [history]);
   const onFinish = values => {
@@ -27,7 +27,7 @@ function SignIn() {
   };
 
   return (
-    <div className={'signin'}>
+    <div className={'signin pwc-forms'}>
       <Form
         {...layout}
         name="basic"
@@ -37,20 +37,20 @@ function SignIn() {
           label="Username"
           name="username"
           rules={[{ required: true, message: 'Please input your username!' }]}
+          className={'pwc-forms__field pwc-forms__field--text form-group'}
         >
-          <Input />
+          <Input className={'form-control'} />
         </Form.Item>
         <Form.Item
           label="Password"
           name="password"
           rules={[{ required: true, message: 'Please input your password!' }]}
+          className={'pwc-forms__field pwc-forms__field--text form-group'}
         >
-          <Input.Password />
+          <Input.Password className={'form-control'} />
         </Form.Item>
         <Form.Item style={{textAlign: 'center'}}>
-          <Button type="primary" htmlType="submit">
-            Sign In
-          </Button>
+          <button type={'submit'} className={'btn btn--primary btn--transparent'}>Sign In</button>
         </Form.Item>
       </Form>
     </div>

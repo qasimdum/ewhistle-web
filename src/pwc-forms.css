@@ -287,7 +287,7 @@
       /* Chrome default focus */ }
   .pwc-forms .has-success .help-block,  .pwc-forms .ant-form-item-has-success .ant-form-item-explain {
     color: #11735C!important; }
-  .pwc-forms .has-success .form-control, .ant-form-item-has-success .form-control, .ant-form-item-has-success .ant-select-selector {
+  .pwc-forms .has-success .form-control, .pwc-forms .ant-form-item-has-success .form-control, .pwc-forms .ant-form-item-has-success .ant-select-selector {
 
     border: 2px solid #11735C!important;
     background: #fff url("./assets/images/icons/forms/icon-correct.png") right 10px center no-repeat;
