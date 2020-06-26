@@ -23,7 +23,7 @@ function Chat(props) {
 					if(response.data[0].allegationId) {
 						setData(response.data);
 					}
-					setAllegationId(response.data[0].id)
+					setAllegationId(response.data[0].allegationId)
 				}
 			})
 	}, [props.trackingId]);
@@ -45,7 +45,7 @@ function Chat(props) {
 			sendHistoryAdmin();
 			return;
 		}
-		sendAllegationHistory(allegationId, chatInput)
+		sendAllegationHistory(props.trackingId, chatInput)
 			.then(response => {
 				if(response.status) {
 					if(file) {
@@ -58,7 +58,7 @@ function Chat(props) {
 	}
 
 	function sendHistoryAdmin() {
-		sendAllegationHistoryAdmin(allegationId, chatInput)
+		sendAllegationHistoryAdmin(props.allegationId, chatInput)
 			.then(response => {
 				if(response.status) {
 					if(file) {
