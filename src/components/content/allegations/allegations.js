@@ -11,6 +11,7 @@ import {transformDates} from "../../../utils/utils";
 import ReportAllegation from "./report-allegation/report-allegation";
 import {getSingleUser} from "../../../axios/users";
 import Chat from "./chat/chat";
+import Note from "./note/note";
 
 const searchFormItemLayout = {
 	labelCol: {
@@ -296,6 +297,9 @@ function Allegations() {
 				</Tabs.TabPane>
 				<Tabs.TabPane tab="Allegation Info" key="2">
 					<ReportAllegation setShowAllegation={setShowAllegation} allegationId={selectedAllegation}/>
+				</Tabs.TabPane>
+				<Tabs.TabPane tab="Note" key="3">
+					<Note allegationId={selectedAllegation}/>
 				</Tabs.TabPane>
 			</Tabs>
 		</Drawer>

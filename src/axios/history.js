@@ -15,3 +15,9 @@ export const sendAllegationHistoryAdmin = (allegationId, text) => {
 export const uploadHistoryFile = (formData) => {
 	return axios.post('history/upload-file/', formData);
 };
+export const getAllegationNotes = (allegationId) => {
+	return axios.get('allegation/note/' + allegationId);
+}
+export const sendAllegationNote = (allegationId, text) => {
+	return axios.post('allegation/note/' + allegationId, {text});
+}

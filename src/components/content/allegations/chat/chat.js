@@ -1,5 +1,5 @@
 import React, {useEffect} from 'react';
-import {Button, Form, Input, message, Upload} from "antd";
+import {Input, message} from "antd";
 import {
 	getAllegationHistory,
 	getAllegationHistoryAdmin,
@@ -7,7 +7,6 @@ import {
 	uploadHistoryFile
 } from "../../../../axios/history";
 import './chat.css';
-import {UploadOutlined} from '@ant-design/icons';
 import {transformDates} from "../../../../utils/utils";
 
 function Chat(props) {
@@ -122,20 +121,12 @@ function Chat(props) {
 			<div className={'chat-input'}>
 				<Input.TextArea value={chatInput} onChange={(e) => setChatInput(e.target.value)} />
 				<div className={'chat-actions'}>
-					{/*<Upload defaultFileList={[]} beforeUpload={(e) => {
-						setFile(e); return false;
-					}}>
-						<Button>
-							<UploadOutlined /> Click to Upload
-						</Button>
-					</Upload>*/}
 					<div className={'pwc-forms__field pwc-forms__field--file form-group'} style={{marginBottom: 0}}>
 						<div className={'form-control form-control--transparent form-control--fileupload-wrapper'}>
 							<input type={'file'} onChange={e => setFile(e.target.files[0])} />
 						</div>
 					</div>
 					<button onClick={sendHistory} className={'btn btn--primary btn--transparent'}>Send</button>
-					{/*<Button onClick={sendHistory}>Send</Button>*/}
 				</div>
 			</div>
 		</div>
