@@ -40,24 +40,6 @@ function HeaderPage() {
 
   return (
     <>
-      {/*<Header className={'header'}>
-        <Row>
-          <Col sm={8} xs={24}>
-            <div className="logo">
-              <img src={LogoImage} alt={'logo'} />
-            </div>
-          </Col>
-          <Col sm={16} xs={24}>
-            <Menu theme={"light"} mode="horizontal" defaultSelectedKeys={[selectedMenu]} onSelect={changePage}>
-              <Menu.Item key="/">Home</Menu.Item>
-              <Menu.Item key="/policy">Whistleblower policy</Menu.Item>
-              <Menu.Item key="/report_allegation">Report an Allegation</Menu.Item>
-              <Menu.Item key="/allegation_tracking">Allegation status</Menu.Item>
-              <Menu.Item key="/signin">Admin Login</Menu.Item>
-            </Menu>
-          </Col>
-        </Row>
-      </Header>*/}
       <section className="page-section--no-pad  fullwidth">
           <div
             className="glb-slim-header glb-slim-header--simple glb-slim-header--has-breadcrumb  glb-slim-header--togglebreadcrumb"
@@ -67,13 +49,12 @@ function HeaderPage() {
               <div className="glb-slim-header__bar" id="glbSlimHeaderBar">
                 <div className="container glb-slim-header__container">
                   <div className=" glb-slim-header__flexrow ">
-                    <div className="  glb-slim-header__branding">
-                      <a className="glb-slim-header__logo" href="http://www.pwc.com/gx/en.html">
-                        <img alt="PwC" src={logo} className=" img-responsive" />
-                      </a>
-                      <span className="glb-slim-header__divider " role="separator"></span>
-                      <a className="glb-slim-header__subbrand" href="http://www.pwc.com/gx/en.html">Bosnia and
-                        Herzegovina</a>
+                    <div className="glb-slim-header__branding">
+                      <Link className="glb-slim-header__logo" to="/">
+                        E-Whistle
+                      </Link>
+                      <span className="glb-slim-header__divider " role="separator" />
+                      <Link className="glb-slim-header__subbrand" to="/">Whistleblowing Platform</Link>
                     </div>
                     <div className=" glb-slim-header__nav-ctrls">
                       <button id="dropdownTrigger_lg" type="button"
