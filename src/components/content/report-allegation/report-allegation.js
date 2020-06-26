@@ -1,5 +1,5 @@
-import React, {useEffect} from 'react';
-import {Button, DatePicker, Form, Input, message, Radio, Select, Upload} from "antd";
+import React from 'react';
+import {Form, Input, message, Radio, Select} from "antd";
 import './report-allegation.css';
 import entities from '../../../enums/Entities';
 import booleans, {enums as booleanEnums} from '../../../enums/Boolean';
@@ -7,7 +7,6 @@ import allegationNatures, {enums as allegationNatureEnums} from '../../../enums/
 import allegationOccurrences, {enums as occurrenceEnum} from '../../../enums/AllegationOccurrence';
 import jobPositions, {enums as jobPositionEnum} from '../../../enums/JobPosition';
 import countries from '../../../enums/Country';
-import {UploadOutlined} from '@ant-design/icons';
 import AllegationNature from "./allegation-nature/allegation-nature";
 import {saveAllegation, uploadFile} from '../../../axios/allegations';
 import {useHistory} from 'react-router-dom';

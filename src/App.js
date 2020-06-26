@@ -1,6 +1,5 @@
 import React from 'react';
 import './App.css';
-import {Layout} from "antd";
 import Content from "./components/content/content";
 import BackendContent from "./components/content/backendContent";
 import {useHistory} from 'react-router-dom';
@@ -9,9 +8,6 @@ import './pwc-forms.css';
 import './featured-tabs.css';
 import './web-fonts.css';
 import './global-footer.css';
-
-
-const {Footer} = Layout;
 
 function App() {
   let content = null;

@@ -1,7 +1,6 @@
 import React from 'react';
 import './header.css';
 import {Link, NavLink, useHistory} from 'react-router-dom';
-import logo from '../../assets/logo.png';
 import './global-slim-header.css';
 import './global-nav.css';
 

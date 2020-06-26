@@ -1072,7 +1072,7 @@ function AllegationNature(props) {
                 {
                   required: true,
                   message: 'This field is required',
-                },
+                }
               ]}
             >
               <Input disabled className={'form-control'}/>
@@ -1093,7 +1093,7 @@ function AllegationNature(props) {
               {
                 required: true,
                 message: 'This field is required',
-              },
+              }
             ]}
           >
             <Checkbox.Group disabled onChange={(e) => {
@@ -1116,7 +1116,7 @@ function AllegationNature(props) {
               ))}
             </Checkbox.Group>
           </Form.Item>
-        </fieldset>,,
+        </fieldset>,
         <Form.Item
           {...formItemLayout}
           labelAlign={"left"}

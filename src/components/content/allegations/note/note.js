@@ -16,7 +16,7 @@ function Note(props) {
           setData(response.data);
         }
       })
-  }, [props.trackingId]);
+  }, [props.allegationId]);
 
   function sendHistory() {
     sendAllegationNote(props.allegationId, chatInput)

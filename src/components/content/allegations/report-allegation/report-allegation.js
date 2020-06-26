@@ -1,5 +1,5 @@
 import React from 'react';
-import {DatePicker, Form, Input, Radio, Select, Spin} from "antd";
+import {Form, Input, Radio, Select, Spin} from "antd";
 import './report-allegation.css';
 import entities from '../../../../enums/Entities';
 import booleans, {enums as booleanEnums} from '../../../../enums/Boolean';
@@ -46,9 +46,6 @@ function ReportAllegation(props) {
   }, [props.allegationId]);
 
   function generateFormValues(data) {
-    /*if (data.allegationDate) {
-      data.allegationDate = "2020-2-02";
-    }*/
     for (let key in data) {
       if (data[key] !== null) {
         data[key] += '';

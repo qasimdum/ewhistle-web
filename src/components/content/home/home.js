@@ -1,5 +1,4 @@
 import React from "react";
-import {Col, Row, Tabs} from "antd";
 import './home.css'
 import Image1 from '../../../assets/image_1.png';
 import Image2 from '../../../assets/image_2.png';
