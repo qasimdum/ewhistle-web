@@ -27,7 +27,7 @@ function Home() {
                   <div className="row hero-title-row--compaign">
                     <div className="textColumn col-sm-8">
                       <div className="hero-title-textpanel">
-                        <h1><a href={'/report_allegation'} className="compaign-hlight__inner">Report Allegation</a></h1>
+                        <h1><a href={'/report_allegation'} className="compaign-hlight__inner">Report an allegation</a></h1>
                         <p className="sub-heading"><span className="compaign-hlight__inner">Your electronic Whistleblowing platform</span></p>
                       </div>
                     </div>

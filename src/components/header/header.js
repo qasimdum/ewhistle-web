@@ -106,7 +106,7 @@ function HeaderPage() {
                         </button>
                         <div className="breadcrumb-component__scroll-pane">
                           <ul className="breadcrumb clearfix">
-                            <li><Link to={'/'}>PwC Global</Link></li>
+                            <li><Link to={'/'}>Home</Link></li>
                             {selectedMenu !== '/' ? <li className="active"><Link to={selectedMenu}>{selectedMenuText}</Link></li> : null}
                           </ul>
                         </div>
@@ -114,7 +114,6 @@ function HeaderPage() {
                           className="breadcrumb-component__scroll-fade breadcrumb-component__scroll-fade--left"/>
                         <div
                           className="breadcrumb-component__scroll-fade breadcrumb-component__scroll-fade--right"/>
-
                       </nav>
                     </div>
                   </div>
